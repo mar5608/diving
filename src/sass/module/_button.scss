@@ -69,26 +69,6 @@
 .button2 {
   display: block;
   position: relative;
-}
-
-.button__text2 {
-  display: inline-block;
-  width: rem(strip-unit(202px));
-  max-width: 100%;
-  height: rem(strip-unit(54px));
-  padding-block: rem(strip-unit(16px));
-  //   padding: rem(strip-unit(16px)) rem(strip-unit(88px)) rem(strip-unit(16px))
-  // rem(strip-unit(40px));
-  background-color: $d-green;
-  border: 1px solid transparent;
-  color: $white;
-  font-size: rem(strip-unit(14px));
-  font-family: $third-font-family;
-  text-align: center;
-  //   text-decoration: none;
-  transition: 0.3s;
-  //   box-shadow: 4px 4px 0 $d-green;
-
   &::before {
     content: "";
     display: block;
@@ -100,16 +80,54 @@
     border: 1px solid $d-green;
     z-index: -1;
   }
-  // 擬似要素で矢印を作る
-  &::after {
+}
+
+.button__text2 {
+  position: relative;
+  display: inline-block;
+  width: rem(strip-unit(202px));
+  max-width: 100%;
+  height: rem(strip-unit(54px));
+  padding-block: rem(strip-unit(16px));
+  padding-right: rem(strip-unit(50px));
+  //   padding: rem(strip-unit(16px)) rem(strip-unit(88px)) rem(strip-unit(16px))
+  // rem(strip-unit(40px));
+  background-color: $d-green;
+  border: 1px solid transparent;
+  color: $white;
+  font-size: rem(strip-unit(14px));
+  font-family: $third-font-family;
+  text-align: center;
+  //   text-decoration: none;
+  transition: 0.3s;
+  &::before {
+    // 擬似要素で矢印を作る
     content: "";
     display: inline-block;
-    width: rem(strip-unit(10px));
-    height: rem(strip-unit(6px));
-    // border-right: 1px solid $white;
-    border-top: 1px solid $white;
-    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem(strip-unit(139px));
+    width: rem(strip-unit(20.5px));
+    height: rem(strip-unit(8.5px));
+    border-right: 1px solid $white;
+    transform: rotate(-45deg);
     transition: border-color 0.3s ease;
+    z-index: 1;
+  }
+
+  &::after {
+    // 擬似要素で矢印を作る
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: rem(strip-unit(120px));
+    width: rem(strip-unit(40px));
+    height: rem(strip-unit(6px));
+    border-top: 1px solid $white;
+    transition: border-color 0.3s ease;
+    z-index: 1;
   }
 
   &:focus,
@@ -117,5 +135,10 @@
     background-color: $white;
     border-color: currentColor;
     color: $d-green;
+
+    &::before,
+    &::after {
+      border-color: $d-green;
+    }
   }
 }
