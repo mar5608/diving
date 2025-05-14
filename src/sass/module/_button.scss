@@ -1,0 +1,121 @@
+@use "global" as *;
+.button {
+  position: relative;
+}
+
+.button__text {
+  display: inline-block;
+  width: rem(strip-unit(202px));
+  max-width: 100%;
+  height: rem(strip-unit(54px));
+  padding-block: rem(strip-unit(16px));
+  //   padding: rem(strip-unit(16px)) rem(strip-unit(88px)) rem(strip-unit(16px))
+  // rem(strip-unit(40px));
+  background-color: $d-green;
+  border: 1px solid transparent;
+  color: $white;
+  font-size: rem(strip-unit(14px));
+  font-family: $third-font-family;
+  text-align: center;
+  //   text-decoration: none;
+  transition: 0.3s;
+  //   box-shadow: 4px 4px 0 $d-green;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: rem(strip-unit(4px));
+    left: rem(strip-unit(4px));
+    width: rem(strip-unit(202px));
+    height: rem(strip-unit(54px));
+    border: 1px solid $d-green;
+    z-index: -1;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $white;
+    border-color: currentColor;
+    color: $d-green;
+  }
+
+  // 擬似要素で矢印を作る
+  &::after {
+    content: "";
+    display: inline-block;
+    width: rem(strip-unit(10px));
+    height: rem(strip-unit(6px));
+    // border-right: 1px solid $white;
+    border-top: 1px solid $white;
+    transform: rotate(45deg);
+    transition: border-color 0.3s ease;
+    z-index: 1;
+
+    &:focus,
+    &:hover {
+      border-color: $d-green;
+    }
+  }
+}
+
+/*----------------------------------
+    
+-----------------------------------*/
+
+.line {
+  margin-top: 100px;
+}
+.button2 {
+  display: block;
+  position: relative;
+}
+
+.button__text2 {
+  display: inline-block;
+  width: rem(strip-unit(202px));
+  max-width: 100%;
+  height: rem(strip-unit(54px));
+  padding-block: rem(strip-unit(16px));
+  //   padding: rem(strip-unit(16px)) rem(strip-unit(88px)) rem(strip-unit(16px))
+  // rem(strip-unit(40px));
+  background-color: $d-green;
+  border: 1px solid transparent;
+  color: $white;
+  font-size: rem(strip-unit(14px));
+  font-family: $third-font-family;
+  text-align: center;
+  //   text-decoration: none;
+  transition: 0.3s;
+  //   box-shadow: 4px 4px 0 $d-green;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: rem(strip-unit(4px));
+    left: rem(strip-unit(4px));
+    width: rem(strip-unit(202px));
+    height: rem(strip-unit(54px));
+    border: 1px solid $d-green;
+    z-index: -1;
+  }
+  // 擬似要素で矢印を作る
+  &::after {
+    content: "";
+    display: inline-block;
+    width: rem(strip-unit(10px));
+    height: rem(strip-unit(6px));
+    // border-right: 1px solid $white;
+    border-top: 1px solid $white;
+    transform: rotate(45deg);
+    transition: border-color 0.3s ease;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $white;
+    border-color: currentColor;
+    color: $d-green;
+  }
+}
