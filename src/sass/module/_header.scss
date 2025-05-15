@@ -1,0 +1,232 @@
+@use "global" as *;
+
+$height-pc: rem(strip-unit(90px));
+$height-sp: rem(strip-unit(80px));
+$paddingSide-pc: rem(strip-unit(40px));
+$paddingSide-sp: rem(strip-unit(15px));
+// $navGap: rem(strip-unit(60px));
+$listGap: rem(strip-unit(40px));
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $height-sp;
+  z-index: 100;
+  background: transparentize($black, 0.32); //rgba(13, 41, 54, 0.68)
+
+  @include mq("md") {
+    height: $height-pc;
+  }
+}
+
+.header__inner {
+  padding-inline: $paddingSide-sp;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  @include mq("md") {
+    padding-inline: $paddingSide-pc;
+  }
+}
+
+.header__logo {
+  a {
+    img {
+      width: rem(strip-unit(102px));
+      display: block;
+
+      @include mq(md) {
+        width: rem(strip-unit(133px));
+      }
+    }
+  }
+}
+
+.header__nav {
+  display: none;
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    // column-gap: $navGap;
+  }
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  column-gap: $listGap;
+}
+
+.header__nav-item {
+}
+
+.header__link {
+  color: $white;
+  //   font-size: 12px;
+  transition: color 0.3s; /* hoverする前のクラスにつける*/
+  text-align: center;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: rem(strip-unit(-4px));
+    left: 0;
+    width: 100%;
+    height: rem(strip-unit(2px));
+    background: $white;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform 0.3s;
+  }
+  /* ホバー */
+  &:hover {
+    // color: $d-green;
+
+    &::after {
+      transform: scale(1, 1);
+    }
+  }
+}
+
+.header__link-en {
+  font-size: rem(strip-unit(18px));
+  font-family: $third-font-family;
+  font-weight: $normal;
+  line-height: 1; /* 100% */
+}
+
+.header__link-jp {
+  font-size: rem(strip-unit(10px));
+  font-weight: $normal;
+  line-height: 1.5; /* 150% */
+}
+
+.drawer-icon {
+  position: relative;
+  width: 32px; //変更
+  height: 24px; //変更;;
+}
+.drawer-icon__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 1px;
+  //   border-radius: 6px;
+  background: $white;
+  transition: transform 0.3s linear, top 0.3x linear; //linear:一定速度
+
+  &:nth-of-type(1) {
+  }
+  &:nth-of-type(2) {
+    top: 12px;
+  }
+  &:nth-of-type(3) {
+    top: 24px;
+  }
+}
+
+/*----------------------------------
+    fv
+-----------------------------------*/
+
+.fv {
+  // margin-top: $height-sp;
+  position: relative;
+  @include mq("md") {
+    // margin-top: $height-pc;
+  }
+}
+
+// .fv__head {
+//   color: $white;
+//   position: absolute;
+//   top: 47%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+//   width: 100%;
+//   z-index: 1;
+
+//   @include mq(md) {
+//     top: 48%;
+//     left: 49.8%;
+//   }
+// }
+
+// .fv__head-main {
+//   font-family: $head-font-family;
+//   font-weight: $normal;
+//   font-size: rem(strip-unit(40px));
+//   letter-spacing: rem(strip-unit(21.6px));
+//   padding-left: rem(strip-unit(20px));
+//   position: relative;
+
+//   @include mq(md) {
+//     font-size: rem(strip-unit(80px));
+//     line-height: 1.25; /* 125% */
+//     // letter-spacing: rem(strip-unit(43.4px));
+//     letter-spacing: rem(strip-unit(42px));
+//     padding-left: rem(strip-unit(50px));
+//   }
+// }
+
+// .fv__head-sub {
+//   position: absolute;
+//   top: 100%;
+//   left: 31%;
+//   font-family: $third-font-family;
+//   font-weight: $normal;
+//   font-size: rem(strip-unit(20px));
+//   // padding-left: rem(strip-unit(10px));
+//   @include mq(md) {
+//     left: 45%;
+//   }
+// }
+
+.fv__head {
+  color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+
+  // @include mq(md) {
+  //   // top: 48%;
+  //   left: 49.8%;
+  // }
+}
+
+.fv__head-main {
+  font-family: $head-font-family;
+  font-weight: $normal;
+  font-size: rem(strip-unit(40px));
+  letter-spacing: rem(strip-unit(21.6px));
+  padding-left: rem(strip-unit(20px));
+
+
+  @include mq(md) {
+    font-size: rem(strip-unit(80px));
+    line-height: 1.25; /* 125% */
+    // letter-spacing: rem(strip-unit(43.4px));
+    letter-spacing: rem(strip-unit(42px));
+    padding-left: rem(strip-unit(50px));
+  }
+}
+
+.fv__head-sub {
+  font-family: $third-font-family;
+  font-weight: $normal;
+  font-size: rem(strip-unit(20px));
+
+  @include mq(md) {
+  }
+}
