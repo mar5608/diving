@@ -1,1 +1,119 @@
 @use "global" as *;
+
+.campaign__button {
+  margin-inline: auto;
+  @include mq(md) {
+    margin-top: rem(strip-unit(40px));
+  }
+}
+.campaign__list {
+  width: rem(strip-unit(280px));
+}
+
+.campaign__slide {
+  margin-top: rem(strip-unit(24px));
+
+  @include mq(md) {
+    margin-top: rem(strip-unit(40px));
+  }
+}
+
+.splide__track {
+}
+
+.splide__list {
+}
+
+.campaign__slide {
+  // width: rem(strip-unit(280px));
+}
+
+.slide__img-wrapper {
+}
+
+.splide__img {
+  height: rem(strip-unit(188px));
+  margin-inline: auto;
+  @include mq(md) {
+    width: rem(strip-unit(400px));
+    height: rem(strip-unit(400px));
+  }
+}
+
+.campaign__slide {
+  background: $white;
+  // box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: rem(strip-unit(2px)) rem(strip-unit(2px)) rem(strip-unit(10px))
+    rem(strip-unit(0px)) rgba(0, 0, 0, 0.25);
+  width: rem(strip-unit(280px));
+}
+
+.slide__content {
+  padding-top: rem(strip-unit(16px));
+  padding-bottom: rem(strip-unit(24px));
+  padding-inline: rem(strip-unit(16px));
+}
+
+.slide__tag {
+  display: inline-block;
+  color: $d-green;
+  font-size: rem(strip-unit(12px));
+  line-height: 1.8333; /* 183.333% 22px*/
+  border: rem(strip-unit(1px)) solid $d-green;
+  padding-inline: rem(strip-unit(10px));
+  padding-block: rem(strip-unit(4px));
+}
+
+.slide__title {
+  font-size: rem(strip-unit(16px));
+  font-weight: $medium;
+  line-height: 1.5s; /* 150% */
+  margin-top: rem(strip-unit(1px));
+}
+
+.slide__body {
+  margin-top: rem(strip-unit(8px));
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(8px));
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid $d-green;
+  padding-top: rem(strip-unit(8px));
+}
+
+.slide__head {
+  display: block;
+  font-size: rem(strip-unit(14px));
+  line-height: 1.71429; /* 24px 171.429% */
+}
+
+.slide__price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  gap: rem(strip-unit(16px));
+}
+
+.slide__old-price {
+  font-family: $head-font-family;
+  font-size: rem(strip-unit(20px));
+  line-height: 1; /* 100% */
+  text-decoration: line-through; // 抹線（打ち消し線）を引く
+  text-decoration-color: #ff0000; // 抹線の色を赤に設定
+  text-decoration-thickness: rem(strip-unit(3px)); // 線の太さを指定
+  // &::after {
+  //   content: "";
+  //   border: 1px solid red;
+  //   width: 100%;
+  // }
+}
+
+.slide__new-price {
+  color: $d-green;
+  font-family: $head-font-family;
+  font-size: rem(strip-unit(32px));
+  font-weight: $bold;
+  line-height: 1; /* 100% */
+}

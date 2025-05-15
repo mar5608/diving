@@ -1,0 +1,100 @@
+@use "global" as *;
+
+/*----------------------------------
+    fv
+-----------------------------------*/
+
+.fv {
+  // margin-top: $height-sp;
+  position: relative;
+  @include mq("md") {
+    // margin-top: $height-pc;
+  }
+}
+
+// .fv__head {
+//   color: $white;
+//   position: absolute;
+//   top: 47%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+//   width: 100%;
+//   z-index: 1;
+
+//   @include mq(md) {
+//     top: 48%;
+//     left: 49.8%;
+//   }
+// }
+
+// .fv__head-main {
+//   font-family: $head-font-family;
+//   font-weight: $normal;
+//   font-size: rem(strip-unit(40px));
+//   letter-spacing: rem(strip-unit(21.6px));
+//   padding-left: rem(strip-unit(20px));
+//   position: relative;
+
+//   @include mq(md) {
+//     font-size: rem(strip-unit(80px));
+//     line-height: 1.25; /* 125% */
+//     // letter-spacing: rem(strip-unit(43.4px));
+//     letter-spacing: rem(strip-unit(42px));
+//     padding-left: rem(strip-unit(50px));
+//   }
+// }
+
+// .fv__head-sub {
+//   position: absolute;
+//   top: 100%;
+//   left: 31%;
+//   font-family: $third-font-family;
+//   font-weight: $normal;
+//   font-size: rem(strip-unit(20px));
+//   // padding-left: rem(strip-unit(10px));
+//   @include mq(md) {
+//     left: 45%;
+//   }
+// }
+
+.fv__head {
+  color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+
+  // @include mq(md) {
+  //   // top: 48%;
+  //   left: 49.8%;
+  // }
+}
+
+.fv__head-main {
+  font-family: $head-font-family;
+  font-weight: $normal;
+  font-size: rem(strip-unit(40px));
+  letter-spacing: rem(strip-unit(21.6px));
+  padding-left: rem(strip-unit(20px));
+
+  @include mq(md) {
+    font-size: rem(strip-unit(80px));
+    line-height: 1.25; /* 125% */
+    // letter-spacing: rem(strip-unit(43.4px));
+    letter-spacing: rem(strip-unit(42px));
+    padding-left: rem(strip-unit(50px));
+  }
+}
+
+.fv__head-sub {
+  font-family: $third-font-family;
+  font-weight: $normal;
+  font-size: rem(strip-unit(20px));
+
+  @include mq(md) {
+  }
+}

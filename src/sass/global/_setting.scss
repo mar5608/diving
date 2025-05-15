@@ -6,8 +6,10 @@ $inner: 1080px;
 // ※キュンパス幅ではなくインナーの幅を指す
 
 // 余白
-$padding-pc: 180px;
+$padding-pc: 40px;
 $padding-sp: 15px;
+// $paddingSide-pc: rem(strip-unit(40px));
+// $paddingSide-sp: rem(strip-unit(15px));
 
 ////////////////////
 // フォント設定
@@ -16,7 +18,7 @@ $padding-sp: 15px;
 $base-font-family: "Noto Sans JP", sans-serif;
 $second-font-family: "Noto Serif JP", serif;
 $third-font-family: "Gotu", sans-serif; //ウェイト400のみ
-$head-font-family: "Lato", sans-serif;//TOP
+$head-font-family: "Lato", sans-serif; //TOP
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
@@ -26,6 +28,7 @@ body {
 // フォントウェイト
 $regular: 300;
 $normal: 400;
+$medium: 500;
 $bold: 700;
 
 ////////////////////
@@ -41,3 +44,14 @@ $d-green: #408f95; //アクセントカラー
 $l-gray: #f5f5f5; //ベースグレー
 $bl-gray: #ddf0f1; //ペール
 $light-gray: #ccc; //ライトグレー
+
+/*----------------------------------
+    ヘッダー
+-----------------------------------*/
+// $height-pc: rem(strip-unit(90px));
+$height-pc: 90px;
+// $height-sp: rem(strip-unit(80px));
+$height-sp: 80px;
+
+// $navGap: rem(strip-unit(60px));
+$listGap: 40px;

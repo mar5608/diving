@@ -5,3 +5,10 @@
     display: none;
   }
 }
+
+.sp-hidden {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}

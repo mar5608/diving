@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="./assets/js/splide.min.js"></script>
     <script defer src="./assets/js/script.js"></script>
   </head>
   <body>
@@ -115,7 +116,8 @@
       </div>
     </header>
     <main>
-      <section class="fv">
+      <!-- fv -->
+      <div class="fv">
         <picture class="fv__image">
           <source
             media="(min-width: 768px)"
@@ -132,7 +134,7 @@
           <h2 class="fv__head-main">DIVING</h2>
           <div class="fv__head-sub">into the ocean</div>
         </div>
-      </section>
+      </div>
 
       <div class="inner"></div>
       <section class="section campaign">
@@ -141,24 +143,56 @@
             <h2 class="title-en"><span class="accent">C</span>ampaign</h2>
             <div class="title-jp">キャンペーン</div>
           </div>
-
-          <section class="section">
-            <!-- <div class="button">
-              <a href="#" class="button__text">View more</a>
-            </div> -->
-
-            <div class="line"></div>
+          <div class="campaign__wrapper">
+            <div class="campaign__content">
+              <!-- <div class="campaign__slide">ここにスライドが入ります。</div> -->
+              <!-- ここから -->
+              <div
+                class="splide campaign__splide"
+                aria-label="Splideの基本的なHTML"
+              >
+                <div class="splide__track">
+                  <div class="splide__list campaign__list">
+                    <div class="splide__slide campaign__slide">
+                      <!-- splide__slide　ゆくゆくaタグにする？-->
+                      <!-- slide中身 -->
+                      <div class="slide__img-wrapper">
+                        <img
+                          class="splide__img"
+                          src="./assets/images/campaign/img-campaign_01.webp"
+                          alt="熱帯魚"
+                        />
+                        <div class="slide__content">
+                          <div class="slide__head">
+                            <div class="slide__tag">ライセンス講習</div>
+                            <h3 class="slide__title">ライセンス取得</h3>
+                          </div>
+                          <div class="slide__body">
+                            <p class="slide__head">全部コミコミ(お一人様)</p>
+                            <div class="slide__price">
+                              <div class="slide__old-price">¥56,000</div>
+                              <div class="slide__new-price">¥46,000</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="splide__slide">Slide 02</div>
+                    <div class="splide__slide">Slide 03</div>
+                  </div>
+                </div>
+              </div>
+              <!-- ここまで -->
+            </div>
             <!-- button雛形 -->
-            <a class="button">
-              <span href="#" class="button__text">View more</span> </a
-            ><!-- /button雛形 -->
-          </section>
+            <div class="campaign__button">
+              <a class="button">
+                <span href="#" class="button__text">View more</span> </a
+              ><!-- /button雛形 -->
+            </div>
+          </div>
         </div>
       </section>
-      <!-- 
-      <div class="inner">
-        <p class="test">変更のテスト!!!</p>
-      </div> -->
     </main>
     <footer></footer>
   </body>
