@@ -32,11 +32,24 @@
       rel="stylesheet"
     />
 
+    <!-- splide -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+      integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU="
+      crossorigin="anonymous"
+    />
+
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="./assets/js/splide.min.js"></script>
+    <!-- <script src="./assets/js/splide.min.js"></script> -->
     <script defer src="./assets/js/script.js"></script>
   </head>
   <body>
@@ -118,7 +131,65 @@
     <main>
       <!-- fv -->
       <div class="fv">
-        <picture class="fv__image">
+        <section class="splide js-fv-splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <picture class="fv__image">
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="./assets/images/fv/img-top-pc_01.webp"
+                  />
+                  <img
+                    src="./assets/images/fv/img-top-sp_01.webp"
+                    alt="水中を亀が泳いでいる"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+              <li class="splide__slide">
+                <picture class="fv__image">
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="./assets/images/fv/img-top-pc_02.webp"
+                  />
+                  <img
+                    src="./assets/images/fv/img-top-sp_02.webp"
+                    alt="水中を泳いでいる亀とダイバー2人"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+              <li class="splide__slide">
+                <picture class="fv__image">
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="./assets/images/fv/img-top-pc_03.webp"
+                  />
+                  <img
+                    src="./assets/images/fv/img-top-sp_03.webp"
+                    alt="ダイビングスポットに浮かぶ船"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+              <li class="splide__slide">
+                <picture class="fv__image">
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="./assets/images/fv/img-top-pc_04.webp"
+                  />
+                  <img
+                    src="./assets/images/fv/img-top-sp_04.webp"
+                    alt="綺麗な海と砂浜"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- <picture class="fv__image">
           <source
             media="(min-width: 768px)"
             srcset="./assets/images/fv/img-top-pc_01.webp"
@@ -128,7 +199,7 @@
             alt="水中を亀が泳いでいる"
             decoding="async"
           />
-        </picture>
+        </picture> -->
 
         <div class="fv__head">
           <h2 class="fv__head-main">DIVING</h2>
