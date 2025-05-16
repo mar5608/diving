@@ -2,6 +2,9 @@
 
 .campaign__button {
   margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @include mq(md) {
     margin-top: rem(strip-unit(40px));
   }

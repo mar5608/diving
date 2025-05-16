@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.information {
+  background: $b-gray;
+}
+
+.information__wrapper {
+}
+
+.information__contents {
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(24px));
+}
+
+.information__image {
+  img {
+    width: 100%;
+    aspect-ratio: 345/227;
+  }
+}
+
+.information__content {
+}
+
+.information__title {
+  font-size: rem(strip-unit(20px));
+  font-weight: $bold;
+  line-height: 1.2; /* 24px 120% */
+  padding-bottom: rem(strip-unit(8px));
+}
+
+.information_text {
+  line-height: 1.5; /* 24px 150% */
+  padding-top: rem(strip-unit(8px));
+  border-top: rem(strip-unit(1px)) solid $d-green;
+}
+
+.information__button {
+  //   margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
