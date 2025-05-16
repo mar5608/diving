@@ -4,9 +4,13 @@
 }
 
 .aboutus__wrapper {
-  margin-top: rem(strip-unit(24px));
-  //   display: flex;
-  //   flex-direction: column;
+  margin-top: rem(strip-unit(32px));
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(40px));
+  @include mq(md) {
+    position: relative;
+  }
 }
 
 .aboutus__images {
@@ -14,24 +18,30 @@
 }
 
 .aboutus__image {
-  position: absolute;
+  text-align: right;
 }
 
 .aboutus__image-main {
-  z-index: 10;
-  top: rem(strip-unit(26px));
-  right: 0;
+  margin: 0 0 0 auto;
+  margin-top: rem(strip-unit(26px));
+
   width: clamp(17.563rem, -16.039rem + 143.37vw, 52.688rem);
-  //   281px->843px |  3759x->767px
+  //   281px->843px |  3759->767px
+  img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 194/128;
+  }
 }
 
 .aboutus__image-sub {
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 11;
   //   width: rem(strip-unit(194px));
-  width: clamp(8rem, -7.306rem + 65.31vw, 24rem);
-  //   128px->384px |  3759x->767px
+  width: clamp(8rem, -3.48rem + 48.98vw, 20rem);
+  //   128px->320px |  375x->767px
   img {
     object-fit: cover;
     width: 100%;
@@ -58,6 +68,7 @@
 .aboutus__image-icon {
   display: none;
   @include mq(md) {
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 12;
@@ -66,34 +77,152 @@
 
 .aboutus__content {
   z-index: 15;
-  padding-top: clamp(17.563rem, -16.039rem + 143.37vw, 52.688rem);
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(16px));
+  //   padding-top: clamp(17.563rem, -16.039rem + 143.37vw, 52.688rem);
   //   281px->843px |  3759x->767px
+  @include mq(md) {
+    position: absolute;
+    flex-direction: row;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .aboutus__title {
+  display: inline-block;
   color: $d-green;
   font-family: $third-font-family;
   font-weight: $normal;
   font-size: rem(strip-unit(40px));
   line-height: 1; /* 100% */
+  @include mq(md) {
+    color: $white;
+    font-size: rem(strip-unit(80px));
+    max-width: rem(strip-unit(400px));
+  }
+}
+
+.aboutus__container {
+  @include mq(md) {
+    max-width: rem(strip-unit(400px));
+  }
 }
 
 .aboutus__text {
   color: $black;
   font-size: rem(strip-unit(16px));
   line-height: 1.5; /* 150% 24px */
+  @include mq(md) {
+    color: $white;
+    font-size: rem(strip-unit(16px));
+    max-width: rem(strip-unit(400px));
+  }
 }
 
 .aboutus__button {
   margin-top: rem(strip-unit(50px));
   margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @include mq(md) {
     margin-top: rem(strip-unit(50px));
   }
 }
 
-.button {
-}
+//--- backup
 
-.button__text {
-}
+// .aboutus {
+// }
+
+// .aboutus__wrapper {
+//   margin-top: rem(strip-unit(24px));
+//   //   display: flex;
+//   //   flex-direction: column;
+// }
+
+// .aboutus__images {
+//   position: relative;
+// }
+
+// .aboutus__image {
+//   position: absolute;
+// }
+
+// .aboutus__image-main {
+//   z-index: 10;
+//   top: rem(strip-unit(26px));
+//   right: 0;
+//   width: clamp(17.563rem, -16.039rem + 143.37vw, 52.688rem);
+//   //   281px->843px |  3759x->767px
+// }
+
+// .aboutus__image-sub {
+//   top: 0;
+//   left: 0;
+//   z-index: 11;
+//   //   width: rem(strip-unit(194px));
+//   width: clamp(8rem, -7.306rem + 65.31vw, 24rem);
+//   //   128px->384px |  3759x->767px
+//   img {
+//     object-fit: cover;
+//     width: 100%;
+//     aspect-ratio: 194/128;
+//   }
+//   //   .c-imgZoom {
+//   //     position: relative;
+//   //     overflow: hidden;
+
+//   //     img {
+//   //       object-fit: cover;
+//   //       transition: transform 0.8s;
+//   //     }
+//   //   }
+
+//   @include mq(md) {
+//     .c-imgZoom:hover img {
+//       transform: scale(1.2);
+//       transition: transform 0.8s;
+//     }
+//   }
+// }
+
+// .aboutus__image-icon {
+//   display: none;
+//   @include mq(md) {
+//     top: 0;
+//     left: 0;
+//     z-index: 12;
+//   }
+// }
+
+// .aboutus__content {
+//   z-index: 15;
+//   padding-top: clamp(17.563rem, -16.039rem + 143.37vw, 52.688rem);
+//   //   281px->843px |  3759x->767px
+// }
+
+// .aboutus__title {
+//   color: $d-green;
+//   font-family: $third-font-family;
+//   font-weight: $normal;
+//   font-size: rem(strip-unit(40px));
+//   line-height: 1; /* 100% */
+// }
+
+// .aboutus__text {
+//   color: $black;
+//   font-size: rem(strip-unit(16px));
+//   line-height: 1.5; /* 150% 24px */
+// }
+
+// .aboutus__button {
+//   margin-top: rem(strip-unit(50px));
+//   margin-inline: auto;
+//   @include mq(md) {
+//     margin-top: rem(strip-unit(50px));
+//   }
+// }
