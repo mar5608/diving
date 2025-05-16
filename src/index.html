@@ -52,8 +52,8 @@
     <!-- <script src="./assets/js/splide.min.js"></script> -->
     <script defer src="./assets/js/script.js"></script>
   </head>
+
   <body>
-    <header></header>
     <header class="header">
       <div class="header__inner">
         <div class="header__logo">
@@ -120,11 +120,74 @@
         </button>
       </div>
       <div id="js-drawer-content" class="drawer-content">
-        <a href="#about" class="drawer-content__link">about</a>
-        <a href="#about" class="drawer-content__link">service</a>
-        <a href="#about" class="drawer-content__link">works</a>
-        <div class="drawer-contact__button">
-          <a href="" class="button">お問い合わせ</a>
+        <div class="inner">
+          <div class="drawer-content__body">
+            <div class="drawer-menu">
+              <ul>
+                <li>
+                  <a href="#" class="drawer-content__link"
+                    ><strong>キャンペーン</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="drawer-content__link"
+                    >ライセンス取得</a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="drawer-content__link"
+                    >貸切体験ダイビング</a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="drawer-content__link"
+                    >ナイトダイビング</a
+                  >
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#" class="drawer-content__link"
+                    ><strong>私たちについて</strong></a
+                  >
+                </li>
+              </ul>
+              <!-- <a href="#about" class="drawer-content__link">about</a>
+              <a href="#about" class="drawer-content__link">service</a>
+              <a href="#about" class="drawer-content__link">works</a> -->
+            </div>
+            <div class="drawer-menu">
+              <ul>
+                <li>
+                  <a href="#" class="drawer-content__link"
+                    ><strong>お客様の声</strong></a
+                  >
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="#" class="drawer-content__link"
+                    ><strong>料金一覧</strong></a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="drawer-content__link"
+                    >ライセンス講習</a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="drawer-content__link"
+                    >体験ダイビング</a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="drawer-content__link"
+                    >ファンダイビング</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -206,8 +269,9 @@
           <div class="fv__head-sub">into the ocean</div>
         </div>
       </div>
+      <!-- /fv -->
 
-      <div class="inner"></div>
+      <!-- campaign -->
       <section class="section campaign">
         <div class="inner">
           <div class="title">
@@ -255,16 +319,64 @@
               </div>
               <!-- ここまで -->
             </div>
-            <!-- button雛形 -->
+            <!-- button -->
             <div class="campaign__button">
               <a class="button">
-                <span href="#" class="button__text">View more</span> </a
-              ><!-- /button雛形 -->
+                <span href="#" class="button__text">View more</span>
+              </a>
             </div>
+            <!-- /button -->
+          </div>
+        </div>
+      </section>
+      <!-- /campaign -->
+
+      <!-- aboutus -->
+      <section class="section aboutus">
+        <div class="inner">
+          <div class="title">
+            <h2 class="title-en"><span class="accent">A</span>bout us</h2>
+            <div class="title-jp">私たちについて</div>
+          </div>
+          <div class="aboutus__wrapper">
+            <div class="aboutus__images">
+              <img
+                src="./assets/images/aboutus/img-aboutus_01.webp"
+                alt="海中の黄色い熱帯魚2匹"
+                class="aboutus__image aboutus__image-main"
+              />
+              <img
+                src="./assets/images/aboutus/img-aboutus_02.webp"
+                alt="沖縄の赤煉瓦の屋根の上のシーサーと青空"
+                class="aboutus__image aboutus__image-sub"
+              /><img
+                src="./assets/images/aboutus/img-aboutus_03.webp"
+                alt="ヒトデのイラスト"
+                class="aboutus__image aboutus__image-icon"
+              />
+            </div>
+            <div class="aboutus__content">
+              <h3 class="aboutus__title">Dive into<br />the Ocean</h3>
+              <p class="aboutus__text">
+                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
+                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              </p>
+            </div>
+            <!-- button -->
+            <div class="aboutus__button">
+              <a class="button">
+                <span href="#" class="button__text">View more</span> </a
+              ><!-- /button -->
+            </div>
+            <!-- /button -->
           </div>
         </div>
       </section>
     </main>
     <footer></footer>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- <script src="./assets/js/splide.min.js"></script> -->
+    <script defer src="./assets/js/script.js" defer></script>
   </body>
 </html>

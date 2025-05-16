@@ -33,6 +33,7 @@
 }
 
 .header__logo {
+  z-index: 100;
   a {
     img {
       width: rem(strip-unit(102px));
@@ -106,7 +107,24 @@
 .drawer-icon {
   position: relative;
   width: 32px; //変更
-  height: 24px; //変更;;
+  height: 24px; //変更;
+  z-index: 100;
+  &.is-checked {
+    .drawer-icon__bar {
+      &:nth-of-type(1) {
+        top: 24px;
+        transform: rotate(45deg);
+        width: 32px;
+      }
+      &:nth-of-type(2) {
+        display: none;
+      }
+      &:nth-of-type(3) {
+        top: 24px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }
 .drawer-icon__bar {
   position: absolute;
@@ -128,6 +146,35 @@
   }
 }
 
+.drawer-content {
+  //初期表示では非表示
+  // display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; //要検討
+  height: 100vh;
+  padding-top: 32px;
+  color: $white;
+  background: $d-green;
+  // background: color.$red;
+  z-index: 99;
+  transform: translateX(100%); //コンテンツ分が100%移動
+  @include mq(md) {
+    display: none;
+  }
+  &.is-checked {
+    transform: translateX(0);
+    transition: transform 0.3s linear, top 0.3s linear; //linear:一定速度
+  }
+}
+
+.drawer-content__body {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
 /*----------------------------------
     fv
 -----------------------------------*/
