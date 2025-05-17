@@ -7,6 +7,7 @@
 .title-en {
   font-family: $third-font-family;
   font-size: rem(strip-unit(32px));
+  font-weight: $normal;
   line-height: 1.25; /* 32px */
   @include mq(md) {
     font-size: rem(strip-unit(40px));
@@ -18,4 +19,16 @@
   font-size: rem(strip-unit(12px));
   color: $d-green;
   line-height: 1.5; /* 18px */
+}
+
+.blog__title {
+  color: $white;
+
+  span {
+    color: $b-gray;
+  }
+
+  .title-jp {
+    color: $white;
+  }
 }

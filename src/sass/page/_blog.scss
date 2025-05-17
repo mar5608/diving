@@ -1,0 +1,98 @@
+@use "global" as *;
+
+.blog {
+  background: url("/assets/images/blog/bg-blog_01.webp") top center/contain
+    no-repeat;
+  position: relative;
+  //   &::before {
+  //     position: absolute;
+  //     content: "";
+  //     top: 0;
+  //     left: 0;
+  //     width: rem(strip-unit(437px));
+  //     height: 100%;
+  //     background: url("/assets/images/blog/icon-blog_01.webp") top center/contain
+  //       no-repeat;
+  //   }
+}
+
+.blog__icon {
+  display: none;
+  @include mq("md") {
+    position: absolute;
+    content: "";
+    top: rem(strip-unit(32px));
+    left: rem(strip-unit(32px));
+    width: rem(strip-unit(437px));
+    height: rem(strip-unit(437px));
+    background: url("/assets/images/blog/icon-blog_01.webp") top top/contain
+      no-repeat;
+  }
+}
+
+.blog__wrapper {
+  margin-top: rem(strip-unit(32px));
+  @include mq(md) {
+    margin-top: rem(strip-unit(80px));
+  }
+}
+
+.blog__cards {
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(39px));
+  @include mq("md") {
+    flex-direction: row;
+  }
+}
+
+.blog__card {
+  background: $white;
+  margin-inline: auto;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  padding-top: rem(strip-unit(16px));
+  padding-bottom: rem(strip-unit(24px));
+  padding-inline: rem(strip-unit(16px));
+  //   margin-top: rem(strip-unit(24px));
+  width: rem(strip-unit(333px));
+}
+
+.blog__card-img {
+  img {
+    width: 100%;
+    aspect-ratio: 301/201;
+    object-fit: cover;
+  }
+}
+
+.blog__card-body {
+  padding-top: rem(strip-unit(19px));
+}
+
+.blog__card-date {
+  color: $black;
+  font-family: $third-font-family;
+  font-size: rem(strip-unit(12px));
+  line-height: 1.5; /* 18px 150% */
+}
+
+.blog__card-title {
+  //   padding-top: rem(strip-unit(24px));
+  color: $black;
+  font-size: rem(strip-unit(16px));
+  font-weight: $medium;
+  line-height: 1.5; /* 24px s150% */
+}
+
+.blog__card-text {
+  border-top: 1px solid $d-green;
+  color: $black;
+  margin-top: rem(strip-unit(4px));
+  padding-top: rem(strip-unit(16px));
+
+  line-height: 1.5; /* 24px 150% */
+}
+
+.blog__button {
+  margin-top: rem(strip-unit(40px));
+}
