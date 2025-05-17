@@ -1,0 +1,71 @@
+@use "global" as *;
+
+.contact {
+  position: relative;
+}
+
+.contact__decoration {
+  display: block;
+  position: absolute;
+  top: rem(strip-unit(10px));
+  right: rem(strip-unit(32px));
+  width: rem(strip-unit(109px));
+  height: rem(strip-unit(50px));
+  transform: scaleX(-1); // 横方向に反転
+  @include mq("md") {
+    bottom: rem(strip-unit(-310px));
+    left: rem(strip-unit(32px));
+    width: rem(strip-unit(437px));
+    height: rem(strip-unit(437px));
+    transform: scaleX(-1); // 横方向に反転
+  }
+}
+
+.contact__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(strip-unit(40px));
+  @include mq("md") {
+    flex-direction: row;
+  }
+}
+
+.contact__info {
+  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  @include mq("md") {
+    text-align: left;
+  }
+}
+
+.contact__map {
+}
+
+.contact__details {
+}
+
+.contact__details-address {
+}
+
+.contact__details-telephone {
+}
+
+.contact__details-business-hours {
+}
+
+.contact__details-holiday {
+}
+
+.contact__head {
+}
+
+.contact__title {
+}
+
+.contact__message {
+}
+
+.contact__button {
+}
