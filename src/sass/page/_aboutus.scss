@@ -124,10 +124,10 @@
 
 .aboutus__button {
   margin-top: rem(strip-unit(50px));
-  margin-inline: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+//   margin-inline: auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
   @include mq(md) {
     margin-top: rem(strip-unit(50px));
   }

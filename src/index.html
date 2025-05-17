@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="robots" content="noindex" />
+
     <!-- meta情報 -->
     <title>CodeUps</title>
     <meta
@@ -384,11 +385,19 @@
           </div>
           <div class="information__wrapper">
             <div class="information__container">
-              <div class="information__image">
+              <!-- <div class="information__image">
                 <img
                   src="./assets/images/information/img-information_01.webp"
                   alt="珊瑚礁と黄色い熱帯魚"
                 />
+              </div> -->
+              <div class="colorbox">
+                <img
+                  class="information__image"
+                  src="./assets/images/information/img-information_01.webp"
+                  alt="珊瑚礁と黄色い熱帯魚"
+                />
+                <!-- <div class="color"></div> -->
               </div>
               <div class="information__contents">
                 <div class="information__content">
@@ -420,14 +429,6 @@
             <div class="title-jp">ブログ</div>
           </div>
           <div class="blog__wrapper">
-            <!-- button -->
-            <!-- <div class="blog__button">
-              <a class="button">
-                <span href="#" class="button__text">View more</span> </a
-              >
-            </div> -->
-            <!-- /button -->
-            <!-- button -->
             <div class="button blog__button">
               <a href="#" class="button__link">
                 <span class="button__text">View more</span>
@@ -441,7 +442,8 @@
     <footer></footer>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- <script src="./assets/js/splide.min.js"></script> -->
-    <script defer src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/jquery.inview.min.js" defer></script>
+    <script src="./assets/js/splide.min.js"></script>
+    <script defer src="./assets/js/script.js"></script>
   </body>
 </html>
