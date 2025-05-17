@@ -3,6 +3,7 @@
 .button {
   display: block;
   position: relative;
+  z-index: 2;
   &::before {
     content: "";
     display: block;
@@ -12,7 +13,7 @@
     width: rem(strip-unit(202px));
     height: rem(strip-unit(54px));
     border: 1px solid $d-green;
-    z-index: -1;
+    z-index: 1;
   }
 }
 
