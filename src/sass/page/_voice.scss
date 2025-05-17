@@ -1,0 +1,173 @@
+@use "global" as *;
+
+.voice {
+  position: relative;
+  padding-top: rem(strip-unit(40px));
+  padding-bottom: rem(strip-unit(140px));
+}
+
+.voice__decoration {
+  display: none;
+  @include mq("md") {
+    display: block;
+    position: absolute;
+  }
+}
+
+.voice__decoration--top {
+  @include mq("md") {
+    top: rem(strip-unit(-40px));
+    left: rem(strip-unit(112px));
+    width: rem(strip-unit(301px));
+    height: rem(strip-unit(138px));
+  }
+}
+
+.voice__decoration--bottom {
+  @include mq("md") {
+    bottom: rem(strip-unit(-14px));
+    right: rem(strip-unit(180px));
+    width: rem(strip-unit(71px));
+    height: rem(strip-unit(162px));
+  }
+}
+
+.voice__wrapper {
+  margin-top: rem(strip-unit(38px));
+}
+
+.voice__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(strip-unit(40px));
+  @include mq("md") {
+    flex-direction: row;
+    // gap: rem(strip-unit(80px));
+  }
+}
+
+.voice__card {
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(16px));
+  width: rem(strip-unit(345px));
+  background: $white;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  padding-top: rem(strip-unit(15px));
+  padding-bottom: rem(strip-unit(24px));
+  padding-inline: rem(strip-unit(15px));
+  @include mq("md") {
+    width: rem(strip-unit(520px));
+    padding-top: rem(strip-unit(24px));
+    padding-inline: rem(strip-unit(24px));
+    gap: rem(strip-unit(40px));
+  }
+}
+.voice__container {
+  display: flex;
+  flex-direction: row;
+  gap: rem(strip-unit(9px));
+}
+
+.voice__contents {
+  display: flex;
+  flex-direction: column;
+  //   gap: rem(strip-unit(24px));
+  width: 50%;
+  border-bottom: 1px solid $d-green;
+  @include mq("md") {
+    justify-content: bottom;
+    flex-grow: 1; // 残りの余白を埋める
+    // width: auto; // 必要に応じて幅を自動調整
+    // padding-left: rem(strip-unit(48px));
+    align-self: flex-end; // 親がflexコンテナの場合
+    gap: rem(strip-unit(4px));
+  }
+}
+.voice__meta {
+  display: flex;
+  flex-direction: column;
+  @include mq("md") {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    // gap: rem(strip-unit(12px)); // 横の余白を gap で制御
+    // justify-content: flex-start; // ← ここがポイント！両端ではなく左寄せにする
+    // flex-wrap: wrap; // もし狭い場合折り返す
+  }
+}
+
+.voice__head {
+  color: var(--green, #0d2936);
+  font-size: rem(strip-unit(16px));
+  font-weight: $medium;
+  line-height: 1.333; /* % オリジナル*/
+  padding-bottom: rem(strip-unit(12px));
+  @include mq("md") {
+    font-size: rem(strip-unit(24px));
+    // line-height: 1.2; /* 24px 120% */
+  }
+}
+
+.voice__profile {
+  font-size: rem(strip-unit(12px));
+  line-height: 1.5; /* 18px 150% */
+  @include mq(md) {
+    align-self: flex-end; // 親がflexコンテナの場合
+  }
+}
+
+.voice__tag {
+  display: inline-block;
+  color: $d-green;
+  font-size: rem(strip-unit(12px));
+  line-height: 1.83333; /* 22px 183.333% */
+  padding-block: rem(strip-unit(4px));
+  padding-inline: rem(strip-unit(12px));
+  border: 1px solid $d-green;
+
+  width: auto; // 自動幅指定（明示的に追加）
+  white-space: nowrap; // テキストが折り返されないようにする
+  flex-shrink: 0; // 親がflexのため、縮まないように防止
+  align-self: flex-start; // 必要に応じて配置を調整
+  //   white-space: nowrap; // テキストを折り返さず一行に
+  //   flex: 0 0 auto; // ←これが超重要！親がflexでも横に広がらないように完全に防止
+  @include mq(md) {
+    margin-right: rem(strip-unit(8px));
+  }
+}
+
+.voice__img {
+  width: 50%;
+  max-width: rem(strip-unit(180px));
+  align-self: flex-end; // 親がflexコンテナの場合
+
+  img {
+    width: 100%;
+    aspect-ratio: 151/117;
+    object-fit: cover;
+  }
+  @include mq("md") {
+    width: calc(180px / 472px * 100%);
+    img {
+      width: 100%;
+      aspect-ratio: 180/140;
+      object-fit: cover;
+    }
+  }
+}
+
+.voice__text {
+}
+
+.button {
+}
+
+.voice__button {
+  margin-top: rem(strip-unit(40px));
+  @include mq("md") {
+    margin-top: rem(strip-unit(80px));
+  }
+}

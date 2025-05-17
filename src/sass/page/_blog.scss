@@ -4,29 +4,19 @@
   background: url("/assets/images/blog/bg-blog_01.webp") top center/contain
     no-repeat;
   position: relative;
-  //   &::before {
-  //     position: absolute;
-  //     content: "";
-  //     top: 0;
-  //     left: 0;
-  //     width: rem(strip-unit(437px));
-  //     height: 100%;
-  //     background: url("/assets/images/blog/icon-blog_01.webp") top center/contain
-  //       no-repeat;
-  //   }
 }
 
-.blog__icon {
+.blog__decoration {
   display: none;
   @include mq("md") {
+    display: block;
     position: absolute;
-    content: "";
     top: rem(strip-unit(32px));
     left: rem(strip-unit(32px));
     width: rem(strip-unit(437px));
     height: rem(strip-unit(437px));
-    background: url("/assets/images/blog/icon-blog_01.webp") top top/contain
-      no-repeat;
+    // background: url("/assets/images/blog/icon-blog_01.webp") top top/contain
+    //   no-repeat;
   }
 }
 
