@@ -4,6 +4,26 @@
   display: block;
   position: relative;
   z-index: 2;
+  text-align: center;
+}
+
+.button__link {
+  display: inline-block;
+  padding-block: rem(strip-unit(16px));
+  padding-left: rem(strip-unit(40px));
+  padding-right: rem(strip-unit(88px));
+  color: $white;
+
+  font-size: rem(strip-unit(14px));
+  font-family: $third-font-family;
+  text-align: center;
+  background-color: $d-green;
+  border: 1px solid transparent;
+  //   text-decoration: none;
+  transition: 0.3s;
+  position: relative;
+
+  //擬似要素で枠線を作る
   &::before {
     content: "";
     display: block;
@@ -13,65 +33,182 @@
     width: rem(strip-unit(202px));
     height: rem(strip-unit(54px));
     border: 1px solid $d-green;
-    z-index: 1;
+    z-index: -1;
   }
-}
 
-.button__text {
-  position: relative;
-  display: inline-block;
-  width: rem(strip-unit(202px));
-  max-width: 100%;
-  height: rem(strip-unit(54px));
-  padding-block: rem(strip-unit(16px));
-  padding-right: rem(strip-unit(50px));
-  background-color: $d-green;
-  border: 1px solid transparent;
-  color: $white;
-  font-size: rem(strip-unit(14px));
-  font-family: $third-font-family;
-  text-align: center;
-  //   text-decoration: none;
-  transition: 0.3s;
-  &::before {
-    // 擬似要素で矢印を作る
-    content: "";
+  // 擬似要素で矢印を作る
+  span {
+    position: relative;
     display: inline-block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: rem(strip-unit(139px));
-    width: rem(strip-unit(20.5px));
-    height: rem(strip-unit(8.5px));
-    border-right: 1px solid $white;
-    transform: rotate(-45deg);
-    transition: border-color 0.3s ease;
-    z-index: 1;
+
+    // 横棒
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% + 4px);
+      translate: 0 -50%;
+      left: calc(100% + 18px);
+      width: 60px;
+      height: 1px;
+      background: $white;
+      // transition: width 0.5s ease;
+      transition: 0.3s;
+    }
+
+    // 斜め棒
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1.7px);
+      translate: 0 -50%;
+      rotate: 45deg;
+      left: calc(100% + 64px);
+      width: 16px;
+      height: 1px;
+      background: white;
+      // transition: left 0.5s ease;
+      transition: 0.3s;
+    }
   }
 
-  &::after {
-    // 擬似要素で矢印を作る
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: rem(strip-unit(120px));
-    width: rem(strip-unit(40px));
-    height: rem(strip-unit(6px));
-    border-top: 1px solid $white;
-    transition: border-color 0.3s ease;
-    z-index: 1;
-  }
-
+  // hover時
   &:focus,
   &:hover {
     background-color: $white;
     border-color: currentColor;
     color: $d-green;
+  }
 
-    &::before,
-    &::after {
+  // hover時
+  @media (any-hover: hover) {
+    &:hover {
+      // border: 1px solid #000;
       border-color: $d-green;
+
+      span {
+        &::before,
+        &::after {
+          background: $d-green;
+        }
+      }
     }
   }
 }
+
+// .button__text {
+//   position: relative;
+//   display: inline-block;
+//   width: rem(strip-unit(202px));
+//   max-width: 100%;
+//   height: rem(strip-unit(54px));
+
+//   &::before {
+//     // 擬似要素で矢印を作る
+//     content: "";
+//     display: inline-block;
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     left: rem(strip-unit(139px));
+//     width: rem(strip-unit(20.5px));
+//     height: rem(strip-unit(8.5px));
+//     border-right: 1px solid $white;
+//     transform: rotate(-45deg);
+//     transition: border-color 0.3s ease;
+//     z-index: 1;
+//   }
+
+//   &::after {
+//     // 擬似要素で矢印を作る
+//     content: "";
+//     display: inline-block;
+//     position: absolute;
+//     top: 50%;
+//     left: rem(strip-unit(120px));
+//     width: rem(strip-unit(40px));
+//     height: rem(strip-unit(6px));
+//     border-top: 1px solid $white;
+//     transition: border-color 0.3s ease;
+//     z-index: 1;
+//   }
+// }
+
+/*----------------------------------
+    backup
+-----------------------------------*/
+
+// .button {
+//   display: block;
+//   position: relative;
+//   z-index: 2;
+//   &::before {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: rem(strip-unit(4px));
+//     left: rem(strip-unit(4px));
+//     width: rem(strip-unit(202px));
+//     height: rem(strip-unit(54px));
+//     border: 1px solid $d-green;
+//     z-index: 1;
+//   }
+// }
+
+// .button__text {
+//   position: relative;
+//   display: inline-block;
+//   width: rem(strip-unit(202px));
+//   max-width: 100%;
+//   height: rem(strip-unit(54px));
+//   padding-block: rem(strip-unit(16px));
+//   padding-right: rem(strip-unit(50px));
+//   background-color: $d-green;
+//   border: 1px solid transparent;
+//   color: $white;
+//   font-size: rem(strip-unit(14px));
+//   font-family: $third-font-family;
+//   text-align: center;
+//   //   text-decoration: none;
+//   transition: 0.3s;
+//   &::before {
+//     // 擬似要素で矢印を作る
+//     content: "";
+//     display: inline-block;
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     left: rem(strip-unit(139px));
+//     width: rem(strip-unit(20.5px));
+//     height: rem(strip-unit(8.5px));
+//     border-right: 1px solid $white;
+//     transform: rotate(-45deg);
+//     transition: border-color 0.3s ease;
+//     z-index: 1;
+//   }
+
+//   &::after {
+//     // 擬似要素で矢印を作る
+//     content: "";
+//     display: inline-block;
+//     position: absolute;
+//     top: 50%;
+//     left: rem(strip-unit(120px));
+//     width: rem(strip-unit(40px));
+//     height: rem(strip-unit(6px));
+//     border-top: 1px solid $white;
+//     transition: border-color 0.3s ease;
+//     z-index: 1;
+//   }
+
+//   &:focus,
+//   &:hover {
+//     background-color: $white;
+//     border-color: currentColor;
+//     color: $d-green;
+
+//     &::before,
+//     &::after {
+//       border-color: $d-green;
+//     }
+//   }
+// }
