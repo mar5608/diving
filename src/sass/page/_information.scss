@@ -6,7 +6,7 @@
 
 .information__wrapper {
   @include mq("md") {
-    margin-top: rem(strip-unit(40px));
+    margin-top: rem(strip-unit(48px));
   }
 }
 
@@ -17,23 +17,25 @@
   margin-top: rem(strip-unit(30px));
   @include mq("md") {
     flex-direction: row;
-    gap: rem(strip-unit(48px));
+    //   margin-top: rem(strip-unit(24px));
+    // gap: rem(strip-unit(48px));
+    gap: 0;
   }
 }
-// .information__image {
-//   img {
-//     width: 100%;
-//     aspect-ratio: 345/227;
-//     object-fit: cover;
-//   }
-//   @include mq("md") {
-//     width: 50%;
-//     img {
-//       width: 100%;
-//       aspect-ratio: 540/356;
-//     }
-//   }
-// }
+.information__image {
+  img {
+    width: 100%;
+    aspect-ratio: 345/227;
+    object-fit: cover;
+  }
+  @include mq("md") {
+    width: 50%;
+    img {
+      width: 100%;
+      aspect-ratio: 540/356;
+    }
+  }
+}
 
 .information__contents {
   display: flex;
@@ -42,6 +44,7 @@
   @include mq("md") {
     justify-content: center;
     width: 50%;
+    padding-left: rem(strip-unit(48px));
   }
 }
 
@@ -50,10 +53,18 @@
   font-weight: $bold;
   line-height: 1.2; /* 24px 120% */
   padding-bottom: rem(strip-unit(4px));
+  @include mq("md") {
+    font-size: rem(strip-unit(24px));
+    line-height: 1; /* 24px 100% */
+  }
 }
 
 .information_text {
   line-height: 1.5; /* 24px 150% */
   padding-top: rem(strip-unit(8px));
   border-top: rem(strip-unit(1px)) solid $d-green;
+  @include mq("md") {
+    font-size: rem(strip-unit(16px));
+    line-height: 1.5; /* 24px 150% */
+  }
 }

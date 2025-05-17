@@ -45,10 +45,10 @@
     &::before {
       content: "";
       position: absolute;
-      top: calc(50% + 4px);
+      top: calc(50%);
       translate: 0 -50%;
-      left: calc(100% + 18px);
-      width: 60px;
+      left: calc(100% + 6px);
+      width: 40px;
       height: 1px;
       background: $white;
       // transition: width 0.5s ease;
@@ -62,8 +62,8 @@
       top: calc(50% - 1.7px);
       translate: 0 -50%;
       rotate: 45deg;
-      left: calc(100% + 64px);
-      width: 16px;
+      left: calc(100% + 40px);
+      width: 10px;
       height: 1px;
       background: white;
       // transition: left 0.5s ease;
