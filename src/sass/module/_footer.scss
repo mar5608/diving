@@ -4,9 +4,16 @@
   color: $white;
   padding-top: rem(strip-unit(48px));
   padding-bottom: rem(strip-unit(56px));
+  @include mq("md") {
+    padding-top: rem(strip-unit(80px));
+    padding-bottom: rem(strip-unit(80px));
+  }
 }
 
 .footer__inner {
+  @include mq("md") {
+    padding-right: 0;
+  }
 }
 
 .footer__brand {
@@ -16,6 +23,8 @@
   gap: rem(strip-unit(16px));
   @include mq(md) {
     flex-direction: row;
+    align-items: end;
+    gap: rem(strip-unit(40px));
   }
 }
 
@@ -26,7 +35,7 @@
       display: block;
 
       @include mq(md) {
-        width: rem(strip-unit(133px));
+        width: rem(strip-unit(200px));
       }
     }
   }
@@ -45,6 +54,10 @@
   img {
     width: rem(strip-unit(24px));
     height: rem(strip-unit(24px));
+    @include mq(md) {
+      width: rem(strip-unit(32px));
+      height: rem(strip-unit(32px));
+    }
   }
 }
 
@@ -65,10 +78,13 @@
   flex-wrap: wrap;
   //   display: grid;
   //   grid-template-columns: repeat(2, 1fr);
-  margin-block: rem(strip-unit(40px));
+  margin-top: rem(strip-unit(40px));
 
   @include mq("md") {
-    grid-template-columns: repeat(4, 1fr);
+    // grid-template-columns: repeat(4, 1fr);
+    margin-top: rem(strip-unit(20px));
+    // max-width: rem(strip-unit(1024px));
+    // gap: rem(strip-unit(4px));
   }
 }
 
@@ -76,8 +92,7 @@
   display: flex;
   flex-direction: column;
   gap: rem(strip-unit(24px));
-  //   flex-wrap: nowrap;
-  //   order: initial; // デフォルトは順番通り
+
   &:nth-child(1) {
     order: 1; // デフォルトは順番通り
   }
@@ -102,7 +117,10 @@
   }
 
   @include mq(md) {
+    width: 25%;
     margin-top: rem(strip-unit(0));
+    gap: rem(strip-unit(30px));
+
     &:nth-child(1) {
       order: 1; // デフォルトは順番通り
     }
@@ -129,7 +147,6 @@
 
 .footer__heading {
   padding-left: rem(strip-unit(26px));
-
   font-weight: $bold;
   line-height: 1.125; /* 18px 112.5% */
   letter-spacing: -0.15em;
@@ -166,8 +183,10 @@
 
 .footer__item {
   padding-left: rem(strip-unit(28px));
-
   line-height: 1.125; /* 112.5% 18px */
+  @include mq(md) {
+    padding-left: rem(strip-unit(22px));
+  }
 }
 
 .footer__copyright {
@@ -177,4 +196,9 @@
 
   line-height: 1.5; /* 18px 150% */
   //   text-align: justify;
+  @include mq(md) {
+    margin-top: rem(strip-unit(80px));
+    font-size: rem(strip-unit(14px));
+    line-height: 1.28571; /* 18px 128.571% */
+  }
 }
