@@ -78,8 +78,7 @@
   gap: rem(strip-unit(24px));
   //   flex-wrap: nowrap;
   //   order: initial; // デフォルトは順番通り
-  &:nth-child(1),
-  &:nth-child(4) {
+  &:nth-child(1) {
     order: 1; // デフォルトは順番通り
   }
 
@@ -104,7 +103,27 @@
 
   @include mq(md) {
     margin-top: rem(strip-unit(0));
-    order: initial; // デフォルトは順番通り
+    &:nth-child(1) {
+      order: 1; // デフォルトは順番通り
+    }
+
+    &:nth-child(2) {
+      // border: 1px solid red;
+      order: 2;
+    }
+
+    &:nth-child(3) {
+      // border: 1px solid blue;
+      order: 3;
+    }
+
+    &:nth-child(4) {
+      order: 4;
+    }
+    &:nth-child(2),
+    &:nth-child(4) {
+      margin-top: 0;
+    }
   }
 }
 
