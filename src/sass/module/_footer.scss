@@ -3,6 +3,7 @@
   background: $d-green;
   color: $white;
   padding-top: rem(strip-unit(48px));
+  padding-bottom: rem(strip-unit(56px));
 }
 
 .footer__inner {
@@ -11,7 +12,7 @@
 .footer__brand {
   display: flex;
   flex-direction: column;
-  margin-block: rem(strip-unit(48px));
+  //   margin-block: rem(strip-unit(48px));
   gap: rem(strip-unit(16px));
   @include mq(md) {
     flex-direction: row;
@@ -57,9 +58,17 @@
 }
 
 .footer__nav {
-  display: flex;
-  flex-direction: row;
-  //   gap: rem(strip-unit(32px));
+  //   display: flex;
+  //   flex-direction: row;
+  //   //   gap: rem(strip-unit(32px));
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-block: rem(strip-unit(40px));
+
+  @include mq("md") {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .footer__column {
@@ -70,11 +79,21 @@
 }
 
 .footer__heading {
-  padding-left: rem(strip-unit(20px));
+  padding-left: rem(strip-unit(26px));
 
   font-weight: $bold;
   line-height: 1.125; /* 18px 112.5% */
+  letter-spacing: -0.15em;
+
   position: relative;
+
+  //   &:not(:first-child) {
+  //     margin-top: rem(strip-unit(24px));
+  //   }
+
+  @include mq(md) {
+    margin-top: rem(strip-unit(0));
+  }
 
   &::before {
     position: absolute;
@@ -93,12 +112,20 @@
 .footer__list {
   display: flex;
   flex-direction: column;
-  gap: rem(strip-unit(12px));
+  gap: rem(strip-unit(24px));
 }
 
 .footer__item {
-  padding-left: rem(strip-unit(20px));
+  padding-left: rem(strip-unit(28px));
+
+  line-height: 1.125; /* 112.5% 18px */
 }
 
 .footer__copyright {
+  text-align: center;
+  font-family: $third-font-family;
+  font-size: rem(strip-unit(12px));
+
+  line-height: 1.5; /* 18px 150% */
+  //   text-align: justify;
 }
