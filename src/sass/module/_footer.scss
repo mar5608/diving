@@ -1,0 +1,104 @@
+@use "global" as *;
+.footer {
+  background: $d-green;
+  color: $white;
+  padding-top: rem(strip-unit(48px));
+}
+
+.footer__inner {
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  margin-block: rem(strip-unit(48px));
+  gap: rem(strip-unit(16px));
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+
+.footer__logo {
+  a {
+    img {
+      width: rem(strip-unit(120px));
+      display: block;
+
+      @include mq(md) {
+        width: rem(strip-unit(133px));
+      }
+    }
+  }
+}
+
+.footer__sns {
+  display: flex;
+  flex-direction: row;
+  gap: rem(strip-unit(16px));
+}
+
+.footer__sns-item {
+}
+
+.footer__sns-link {
+  img {
+    width: rem(strip-unit(24px));
+    height: rem(strip-unit(24px));
+  }
+}
+
+.fab {
+}
+
+.fa-facebook-f {
+}
+
+.fa-instagram {
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: row;
+  //   gap: rem(strip-unit(32px));
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(24px));
+  flex-wrap: nowrap;
+}
+
+.footer__heading {
+  padding-left: rem(strip-unit(20px));
+
+  font-weight: $bold;
+  line-height: 1.125; /* 18px 112.5% */
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: url("../../assets/images/footer/icon-footer_01.webp") no-repeat
+      center / contain;
+    display: block;
+    width: rem(strip-unit(18px));
+    height: rem(strip-unit(18px));
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(12px));
+}
+
+.footer__item {
+  padding-left: rem(strip-unit(20px));
+}
+
+.footer__copyright {
+}
