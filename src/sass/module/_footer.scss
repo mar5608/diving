@@ -61,9 +61,10 @@
   //   display: flex;
   //   flex-direction: row;
   //   //   gap: rem(strip-unit(32px));
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
   margin-block: rem(strip-unit(40px));
 
   @include mq("md") {
@@ -75,7 +76,36 @@
   display: flex;
   flex-direction: column;
   gap: rem(strip-unit(24px));
-  flex-wrap: nowrap;
+  //   flex-wrap: nowrap;
+  //   order: initial; // デフォルトは順番通り
+  &:nth-child(1),
+  &:nth-child(4) {
+    order: 1; // デフォルトは順番通り
+  }
+
+  &:nth-child(2) {
+    // border: 1px solid red;
+    order: 3; // 3番目に表示
+  }
+
+  &:nth-child(3) {
+    // border: 1px solid blue;
+    order: 2; // 2番目に表示
+  }
+
+  &:nth-child(4) {
+    order: 4; // 4番目に表示
+  }
+
+  &:nth-child(2),
+  &:nth-child(4) {
+    margin-top: rem(strip-unit(24px));
+  }
+
+  @include mq(md) {
+    margin-top: rem(strip-unit(0));
+    order: initial; // デフォルトは順番通り
+  }
 }
 
 .footer__heading {
