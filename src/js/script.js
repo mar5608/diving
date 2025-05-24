@@ -1,17 +1,6 @@
-jQuery(function ($) {
-  // この中であればWordpressでも「$」が使用可能になる
-});
-
-/************************
- * topに戻る
- ************************/
-jQuery(window).on("scroll", function () {
-  if (100 < jQuery(window).scrollTop()) {
-    jQuery("#js-pagetop").addClass("is-show");
-  } else {
-    jQuery("#js-pagetop").removeClass("is-show");
-  }
-});
+// jQuery(function ($) {
+//   // この中であればWordpressでも「$」が使用可能になる
+// });
 
 /************************
  * Splide
@@ -55,16 +44,18 @@ new Splide(".js-fv-splide", splideOption).mount();
 /************************
  * drawer
  ************************/
+// drawerのアイコンをクリックしたときの処理
 jQuery("#js-drawer-icon").on("click", function (e) {
   e.preventDefault();
+  console.log("drawerのアイコンをクリックしたときの処理");
   jQuery("#js-drawer-icon").toggleClass("is-checked");
   jQuery("#js-drawer-content").toggleClass("is-checked");
 });
 
-/** スムーススクロール*/
-/** drawer 制御 */
+// ドロワーの中のリンクをクリックしたときの処理
 jQuery('#js-drawer-content a[href^="#"]').on("click", function (e) {
   e.preventDefault();
+  console.log("is-checkedを外す処理");
   jQuery("#js-drawer-icon").removeClass("is-checked");
   jQuery("#js-drawer-content").removeClass("is-checked");
 });
@@ -94,7 +85,7 @@ jQuery('a[href^="#"]').on("click", function (e) {
  * 画像の出現アニメーション
  ************************/
 //要素の取得とスピードの設定
-var box = $(".colorbox"), // .colorboxというクラスを持った要素を全部集めて、「box」として覚えておく
+var box = $(".colorbox"),
   speed = 700; // アニメーションにかかる時間（700ミリ秒＝0.7秒）
 
 $(document).ready(function () {
@@ -105,10 +96,8 @@ $(document).ready(function () {
   });
 });
 
-//.colorboxの付いた全ての要素に対して下記の処理を行う
+//colorboxの付いた全ての要素に対して下記の処理を行う
 box.each(function () {
-  //   console.log("each文の中");
-  //   alert.log("each文の中");
   // 画像の枠（this）に、色のついた四角（.color）を追加するよ
   $(this).append('<div class="color"></div>');
   var color = $(this).find(".color"),
