@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.pagetop {
+  position: fixed;
+  right: rem(strip-unit(15px));
+  bottom: rem(strip-unit(10px));
+  // width: calc(50 / 375 * 100%);
+  width: rem(strip-unit(48px));
+  height: rem(strip-unit(48px));
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s, visibility 0.3s;
+
+  @include mq(md) {
+    width: rem(strip-unit(80px));
+    height: rem(strip-unit(80px));
+    bottom: rem(strip-unit(30px));
+  }
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+}

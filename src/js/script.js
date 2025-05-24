@@ -3,6 +3,17 @@ jQuery(function ($) {
 });
 
 /************************
+ * topに戻る
+ ************************/
+jQuery(window).on("scroll", function () {
+  if (100 < jQuery(window).scrollTop()) {
+    jQuery("#js-pagetop").addClass("is-show");
+  } else {
+    jQuery("#js-pagetop").removeClass("is-show");
+  }
+});
+
+/************************
  * Splide
  ************************/
 
