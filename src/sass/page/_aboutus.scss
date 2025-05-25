@@ -10,6 +10,7 @@
   gap: rem(strip-unit(40px));
   @include mq(md) {
     position: relative;
+    margin-top: rem(strip-unit(44px));
   }
 }
 
@@ -18,7 +19,7 @@
 }
 
 .aboutus__image {
-  text-align: right;
+  // text-align: right;
 }
 
 .aboutus__image-main {
@@ -31,6 +32,10 @@
     object-fit: cover;
     width: 100%;
     aspect-ratio: 194/128;
+  }
+  @include mq(md) {
+    margin-top: rem(strip-unit(80px));
+    width: rem(strip-unit(880px));
   }
 }
 
@@ -47,31 +52,30 @@
     width: 100%;
     aspect-ratio: 194/128;
   }
-  //   .c-imgZoom {
-  //     position: relative;
-  //     overflow: hidden;
-
-  //     img {
-  //       object-fit: cover;
-  //       transition: transform 0.8s;
-  //     }
-  //   }
-
   @include mq(md) {
-    .c-imgZoom:hover img {
-      transform: scale(1.2);
-      transition: transform 0.8s;
-    }
+    width: rem(strip-unit(400px));
   }
+
+  // @include mq(md) {
+  //   .c-imgZoom:hover img {
+  //     transform: scale(1.2);
+  //     transition: transform 0.8s;
+  //   }
+  // }
 }
 
 .aboutus__image-icon {
   display: none;
   @include mq(md) {
     position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
+    bottom: rem(strip-unit(-98px));
+    // left: calc(50% + rem(strip-unit(30px)));
+    left: calc(100% - $padding-pc - rem(strip-unit(56px)));
     z-index: 12;
+    width: rem(strip-unit(194px));
+    height: rem(strip-unit(181px));
+    // flex-shrink: 0;
   }
 }
 
@@ -85,9 +89,13 @@
   @include mq(md) {
     position: absolute;
     flex-direction: row;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    gap: rem(strip-unit(40px));
+
+    top: 30%;
+    right: 0;
+    padding-right: rem(strip-unit(41px));
+    // left: calc(rem(strip-unit(770px)));
+    // transform: translate(-50%, -50%);
   }
 }
 
@@ -102,6 +110,8 @@
     color: $white;
     font-size: rem(strip-unit(80px));
     max-width: rem(strip-unit(400px));
+
+    line-height: 1.25; /* 100px 125% */
   }
 }
 
@@ -118,16 +128,16 @@
   @include mq(md) {
     color: $white;
     font-size: rem(strip-unit(16px));
-    max-width: rem(strip-unit(400px));
+    min-width: rem(strip-unit(400px));
   }
 }
 
 .aboutus__button {
   margin-top: rem(strip-unit(50px));
-//   margin-inline: auto;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
+  //   margin-inline: auto;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
   @include mq(md) {
     margin-top: rem(strip-unit(50px));
   }
