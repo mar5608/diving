@@ -1,6 +1,7 @@
 @use "global" as *;
 
 .aboutus {
+  // margin-top: rem(strip-unit(40px));
 }
 
 .aboutus__wrapper {
@@ -133,7 +134,7 @@
 }
 
 .aboutus__button {
-  margin-top: rem(strip-unit(50px));
+  margin-top: rem(strip-unit(30px));
   //   margin-inline: auto;
   //   display: flex;
   //   justify-content: center;

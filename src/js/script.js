@@ -3,45 +3,6 @@
 // });
 
 /************************
- * Splide
- ************************/
-
-//Splideの初期化
-// const fvSplide = new Splide(".js-fv-splide").mount();
-// Splideの初期化
-document.addEventListener("DOMContentLoaded", function () {
-  const splideElement = document.querySelector(".js-fv-splide");
-  if (splideElement) {
-    console.log("Splide element found:", splideElement);
-    new Splide(splideElement).mount();
-  } else {
-    console.warn("Splide element not found. Skipping initialization.");
-  }
-});
-
-let splideOption = {
-  //   loop: true,
-  //   effect: "fade",
-  //   autoplay: {
-  //     delay: 4000,
-  //     disableOnInteraction: false,
-  //   },
-  //   speed: 2000,
-  //   pagination: {
-  //     el: ".swiper-pagination",
-  //     clickable: true,
-  //   },
-  type: "loop", // ループを有効にする
-  autoplay: true, // 自動再生を有効にする
-  interval: 4000, // 自動再生の間隔（ミリ秒）
-  //   speed: 3000, // スライド切り替えの速度（ミリ秒）
-  pagination: false, // ページネーションを無効にする
-};
-new Splide(".js-fv-splide", splideOption).mount();
-
-// const campaignSplide = new Splide(".js-campaign-splide").mount();
-
-/************************
  * drawer
  ************************/
 // drawerのアイコンをクリックしたときの処理
@@ -80,6 +41,76 @@ jQuery('a[href^="#"]').on("click", function (e) {
   //   "swing" // swing or liner
   // );
 });
+
+/************************
+ * fv Splide(スライダー)
+ ************************/
+
+//Splideの初期化
+// document.addEventListener("DOMContentLoaded", function () {
+//   const splideElement = document.querySelector("#js-fv-splide");
+//   if (splideElement) {
+//     console.log("Splide element found:", splideElement);
+//     new Splide(splideElement).mount();
+//   } else {
+//     console.warn("Splide element not found. Skipping initialization.");
+//   }
+// });
+
+let splideOptionFv = {
+  type: "loop", // ループを有効にする
+  perPage: 1, // 1枚ずつ表示
+  autoplay: true, // 自動再生を有効にする
+  interval: 6000, // 自動再生の間隔（ミリ秒）
+  speed: 600, // スライド切り替えの速度（ミリ秒）
+  pagination: false, // ページネーション（ドット）を非表示
+  arrows: false, // 左右の矢印ボタンも不要であればfalseに
+};
+new Splide("#js-fv-splide", splideOptionFv).mount();
+
+/************************
+ * campaign Splide(スライダー)
+ ************************/
+
+let splideOptionCampaign = {
+  type: "loop", // ループを有効にする
+  gap: 40, // スライド間の隙間（ピクセル）
+  fixedWidth: 334, // 固定幅を設定（334px）
+  fixedHeight: 445, // 高さ
+  autoplay: false, // 自動再生を有効にする
+  interval: 4000, // 自動再生の間隔（ミリ秒）
+  speed: 400, // スライド切り替えの速度（ミリ秒）
+  arrows: true, // 左右の矢印ボタンも不要であればfalseに
+  pagination: false, // ページネーションを無効にする
+  pauseOnHover: false,
+  perPage: 3.5, // 1ページに3枚表示
+  perMove: 1, // 1ページごとに1枚ずつ移動
+  breakpoints: {
+    768: {
+      perPage: 1.22, // 768px未満の表示枚数
+      gap: 20, // スライド間の隙間（ピクセル）
+      fixedWidth: 280, // 固定幅を設定（280px）
+      fixedHeight: 336, // 高さ
+      arrows: false, // 左右の矢印ボタンも不要であればfalseに
+    },
+  },
+};
+new Splide("#js-campaign-splide", splideOptionCampaign).mount();
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   var splide = new Splide("#js-campaign-splide", {
+//     type: "loop", // ループを有効にする
+//     gap: 20, // スライド間の隙間（ピクセル）
+//     perPage: 1.22, // 1ページに3枚表示
+//     autoplay: true, // 自動再生を有効にする
+//     interval: 6000, // 自動再生の間隔（ミリ秒）
+//     speed: 600, // スライド切り替えの速度（ミリ秒）
+//     arrows: false, // 左右の矢印ボタンも不要であればfalseに
+//     pagination: false, // ページネーションを無効にする
+//     pauseOnHover: false,
+//   });
+//   splide.mount();
+// });
 
 /************************
  * 画像の出現アニメーション
