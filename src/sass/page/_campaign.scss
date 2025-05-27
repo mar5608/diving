@@ -16,7 +16,7 @@
 
 .campaign__wrapper {
   margin-top: rem(strip-unit(8px));
-  padding-inline: rem(strip-unit($paddingSide-sp));
+  padding-inline: rem(strip-unit($padding-sp));
   @include mq(md) {
     width: rem(strip-unit(1280px));
     margin-left: auto;

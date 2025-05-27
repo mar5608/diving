@@ -17,7 +17,11 @@
 .voice__decoration--top {
   @include mq("md") {
     top: rem(strip-unit(-40px));
-    left: rem(strip-unit(112px));
+    // left: rem(strip-unit(112px));
+    left: calc(
+      50% - clamp(23.125rem, 5.268rem + 37.2vw, 38.75rem)
+    ); //370px->620px | 768px ->1440 px
+
     width: rem(strip-unit(301px));
     height: rem(strip-unit(138px));
   }
@@ -25,8 +29,11 @@
 
 .voice__decoration--bottom {
   @include mq("md") {
-    bottom: rem(strip-unit(-14px));
-    right: rem(strip-unit(180px));
+    bottom: rem(strip-unit(10px));
+    // right: rem(strip-unit(180px));
+    left: calc(
+      50% + clamp(19.25rem, 7.536rem + 24.4vw, 29.5rem)
+    ); //308px->472px | 768px ->1440 px
     width: rem(strip-unit(71px));
     height: rem(strip-unit(162px));
   }
