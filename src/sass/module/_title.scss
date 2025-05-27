@@ -45,9 +45,18 @@
   }
 }
 
+/*----------------------------------
+    title contactバージョン
+-----------------------------------*/
+
 .contact__title {
+  // gap: rem(strip-unit(0px));
+
   .title-en {
     font-size: rem(strip-unit(80px));
     line-height: 1; /* 80px 100% */
+  }
+  .title-jp {
+    margin-top: rem(strip-unit(-8px));
   }
 }

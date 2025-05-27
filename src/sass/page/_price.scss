@@ -4,7 +4,7 @@
   background: $b-gray;
   margin-top: 0;
   padding-top: rem(strip-unit(80px));
-
+  padding-bottom: rem(strip-unit(82px));
   position: relative;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .price__wrapper {
-  margin-top: rem(strip-unit(24px));
+  margin-top: rem(strip-unit(27px));
   @include mq("md") {
     margin-top: rem(strip-unit(40px));
   }
@@ -62,11 +62,11 @@
   font-weight: $bold;
   line-height: 1.5; /* 24px 150% */
   border-bottom: 1px solid $d-green;
-  padding-bottom: rem(strip-unit(2px));
+  padding-bottom: rem(strip-unit(4px));
 }
 
 .price-table__list {
-  margin-bottom: rem(strip-unit(40px));
+  margin-bottom: rem(strip-unit(39px));
 }
 
 .price-table__item {
@@ -118,6 +118,7 @@
 }
 
 .price__button {
+  padding-right: rem(strip-unit(4px));
   @include mq("md") {
     margin-top: rem(strip-unit(40px));
   }

@@ -2,13 +2,18 @@
 
 .contact {
   position: relative;
+  margin-top: rem(strip-unit(80px));
+  margin-bottom: rem(strip-unit(100px));
 }
 
 .contact__decoration {
   display: block;
   position: absolute;
-  top: rem(strip-unit(10px));
-  right: rem(strip-unit(32px));
+  top: rem(strip-unit(-25px));
+  // right: rem(strip-unit(32px));
+  left: calc(
+    50% + clamp(4rem, 0.185rem + 15.26vw, 7.5rem)
+  ); //64px->120px | 400px ->767 px
   width: rem(strip-unit(109px));
   height: rem(strip-unit(50px));
   transform: scaleX(-1); // 横方向に反転
@@ -31,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   padding-inline: rem(strip-unit(25px));
-  gap: rem(strip-unit(35px));
+  gap: rem(strip-unit(40px));
   @include mq("md") {
     flex-direction: row;
     background: $white;
@@ -64,6 +69,7 @@
   margin-inline: auto;
   border-bottom: rem(strip-unit(1px)) solid $d-green;
   //   width: rem(strip-unit(295px));
+  padding-bottom: rem(strip-unit(8px));
 
   img {
     margin-inline: auto;
@@ -112,7 +118,8 @@
   display: flex;
   flex-direction: column;
   gap: rem(strip-unit(4px));
-  padding-block: rem(strip-unit(16px));
+  padding-block: rem(strip-unit(15px));
+  // margin-top: rem(strip-unit(8px));
   @include mq("md") {
     column-gap: rem(strip-unit(20px));
     text-align: left;
@@ -120,6 +127,7 @@
 }
 
 .contact__details-address {
+  padding-right: rem(strip-unit(10px));
 }
 
 .contact__details-telephone {
@@ -137,7 +145,7 @@
 .contact__message {
   color: $d-green;
   text-align: center;
-  padding-top: rem(strip-unit(8px));
+  padding-top: rem(strip-unit(6px));
   line-height: 1.28571; /* 18px 128.571% */
   letter-spacing: -0.13em;
 }
