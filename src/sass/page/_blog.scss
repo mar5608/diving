@@ -4,6 +4,7 @@
   position: relative;
   // margin-top: rem(strip-unit(70px));
   padding-top: rem(strip-unit(80px));
+  padding-bottom: rem(strip-unit(3px));
   @include mq(md) {
     background: url("/assets/images/blog/bg-blog_01.webp") top center/contain
       no-repeat;
@@ -25,7 +26,7 @@
 }
 
 .blog__wrapper {
-  margin-top: rem(strip-unit(32px));
+  margin-top: rem(strip-unit(30px));
   @include mq(md) {
     margin-top: rem(strip-unit(80px));
   }
@@ -34,7 +35,7 @@
 .blog__cards {
   display: flex;
   flex-direction: column;
-  gap: rem(strip-unit(39px));
+  gap: rem(strip-unit(40px));
   @include mq("md") {
     flex-direction: row;
   }
@@ -60,7 +61,7 @@
 }
 
 .blog__card-body {
-  padding-top: rem(strip-unit(19px));
+  padding-top: rem(strip-unit(16px));
 }
 
 .blog__card-date {
@@ -89,4 +90,5 @@
 
 .blog__button {
   margin-top: rem(strip-unit(40px));
+  padding-right: rem(strip-unit(4px));
 }

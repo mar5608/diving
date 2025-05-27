@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .aboutus {
-  margin-top: rem(strip-unit(80px));
+  margin-top: rem(strip-unit(82px));
   margin-bottom: rem(strip-unit(40px));
   @include mq(md) {
     margin-top: rem(strip-unit(-20px));
@@ -10,7 +10,7 @@
 }
 
 .aboutus__wrapper {
-  margin-top: rem(strip-unit(32px));
+  margin-top: rem(strip-unit(30px));
   display: flex;
   flex-direction: column;
   gap: rem(strip-unit(40px));
@@ -92,7 +92,7 @@
   z-index: 15;
   display: flex;
   flex-direction: column;
-  gap: rem(strip-unit(16px));
+  gap: rem(strip-unit(15px));
   //   padding-top: clamp(17.563rem, -16.039rem + 143.37vw, 52.688rem);
   //   281px->843px |  3759x->767px
   @include mq(md) {

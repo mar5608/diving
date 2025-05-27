@@ -2,9 +2,9 @@
 
 .information {
   background: $b-gray;
-  margin-top: rem(strip-unit(70px));
+  margin-top: rem(strip-unit(72px));
   padding-top: rem(strip-unit(80px));
-  padding-bottom: rem(strip-unit(80px));
+  padding-bottom: rem(strip-unit(82px));
 }
 
 .information__wrapper {
@@ -63,11 +63,16 @@
 }
 
 .information_text {
-  line-height: 1.5; /* 24px 150% */
+  // line-height: 1.5; /* 24px 150% */
+  line-height: 1.48;
   padding-top: rem(strip-unit(8px));
   border-top: rem(strip-unit(1px)) solid $d-green;
   @include mq("md") {
     font-size: rem(strip-unit(16px));
     line-height: 1.5; /* 24px 150% */
   }
+}
+
+.information__button {
+  padding-right: rem(strip-unit(4px));
 }

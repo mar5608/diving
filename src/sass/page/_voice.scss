@@ -2,8 +2,8 @@
 
 .voice {
   position: relative;
-  padding-top: rem(strip-unit(40px));
-  padding-bottom: rem(strip-unit(140px));
+  padding-top: rem(strip-unit(80px));
+  padding-bottom: rem(strip-unit(84px));
 }
 
 .voice__decoration {
@@ -40,7 +40,7 @@
 }
 
 .voice__wrapper {
-  margin-top: rem(strip-unit(38px));
+  margin-top: rem(strip-unit(43px));
 }
 
 .voice__cards {
@@ -57,7 +57,7 @@
 .voice__card {
   display: flex;
   flex-direction: column;
-  gap: rem(strip-unit(16px));
+  gap: rem(strip-unit(15px));
   width: rem(strip-unit(345px));
   background: $white;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
@@ -80,7 +80,7 @@
 .voice__contents {
   display: flex;
   flex-direction: column;
-  //   gap: rem(strip-unit(24px));
+  gap: rem(strip-unit(3px));
   width: 50%;
   border-bottom: 1px solid $d-green;
   @include mq("md") {
@@ -110,8 +110,8 @@
   color: var(--green, #0d2936);
   font-size: rem(strip-unit(16px));
   font-weight: $medium;
-  line-height: 1.333; /* % オリジナル*/
-  padding-bottom: rem(strip-unit(12px));
+  line-height: 1.2; /* % オリジナル*/
+  padding-bottom: rem(strip-unit(17px));
   @include mq("md") {
     font-size: rem(strip-unit(24px));
     // line-height: 1.2; /* 24px 120% */
@@ -131,7 +131,8 @@
   color: $d-green;
   font-size: rem(strip-unit(12px));
   line-height: 1.83333; /* 22px 183.333% */
-  padding-block: rem(strip-unit(4px));
+  padding-top: rem(strip-unit(4px));
+  padding-bottom: rem(strip-unit(2px));
   padding-inline: rem(strip-unit(12px));
   border: 1px solid $d-green;
 
@@ -169,11 +170,9 @@
 .voice__text {
 }
 
-.button {
-}
-
 .voice__button {
-  margin-top: rem(strip-unit(40px));
+  margin-top: rem(strip-unit(39px));
+  padding-right: rem(strip-unit(4px));
   @include mq("md") {
     margin-top: rem(strip-unit(80px));
   }
