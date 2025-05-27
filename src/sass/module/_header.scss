@@ -149,7 +149,7 @@
   height: rem(strip-unit(1px));
   //   border-radius: 6px;
   background: $white;
-  transition: transform 0.3s linear, top 0.3x linear; //linear:一定速度
+  transition: transform 0.3s linear, top 0.3s linear; //linear:一定速度
 
   &:nth-of-type(1) {
   }

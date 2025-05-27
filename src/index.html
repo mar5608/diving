@@ -55,11 +55,21 @@
   </head>
 
   <body>
+    <!-- loading -->
+    <div id="loading" class="loading">
+      <div class="loading__image-wrapper">
+        <div class="loading__image-part image-part--left"></div>
+        <div class="loading__image-part image-part--right"></div>
+      </div>
+    </div>
+    <!-- /loading -->
     <header class="header">
       <div class="header__inner">
         <div class="header__logo">
           <a href="./"
-            ><img src="./assets/images/common/logo-codeups_01.webp" alt=""
+            ><img
+              src="./assets/images/common/logo-codeups_01.webp"
+              alt="CodeUps"
           /></a>
         </div>
         <nav class="header__nav sp-hidden">
@@ -207,7 +217,7 @@
     <main class="main">
       <!-- fv -->
       <div class="fv">
-        <section id="js-fv-splide" class="splide fv__splide">
+        <div id="js-fv-splide" class="splide fv__splide">
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide splide__slide">
@@ -264,7 +274,7 @@
               </li>
             </ul>
           </div>
-        </section>
+        </div>
 
         <div class="fv__head">
           <h2 class="fv__head-main">DIVING</h2>
@@ -285,11 +295,7 @@
           <div class="campaign__content">
             <!-- <div class="campaign__slide">ここにスライドが入ります。</div> -->
             <!-- ここから -->
-            <div
-              id="js-campaign-splide"
-              class="splide campaign__splide"
-              aria-label="Splideの基本的なHTML"
-            >
+            <div id="js-campaign-splide" class="splide campaign__splide">
               <!-- 矢印を追加 -->
               <div class="splide__arrows campaign__arrows">
                 <button
@@ -508,7 +514,10 @@
       <!-- blog -->
       <section class="section blog">
         <div class="blog__decoration">
-          <img src="/assets/images/blog/icon-blog_01.webp" alt="" />
+          <img
+            src="/assets/images/blog/icon-blog_01.webp"
+            alt="キンギョハナダイのイラスト"
+          />
         </div>
 
         <div class="inner">
@@ -523,14 +532,14 @@
                   <img
                     src="/assets/images/blog/img-blog_01.webp"
                     alt="海中の赤系珊瑚礁"
-                    width=""
-                    height=""
                     loading="lazy"
                     decoding="async"
                   />
                 </figure>
                 <div class="blog__card-body">
-                  <date class="blog__card-date">2023.11/17</date>
+                  <time datetime="2023-11-17" class="blog__card-date"
+                    >2023.11/17</time
+                  >
                   <h3 class="blog__card-title">ライセンス取得</h3>
                   <p class="blog__card-text">
                     ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
@@ -543,14 +552,14 @@
                   <img
                     src="/assets/images/blog/img-blog_02.webp"
                     alt="海を泳ぐウミガメ"
-                    width=""
-                    height=""
                     loading="lazy"
                     decoding="async"
                   />
                 </figure>
                 <div class="blog__card-body">
-                  <date class="blog__card-date">2023.11/17</date>
+                  <time datetime="2023-11-17" class="blog__card-date"
+                    >2023.11/17</time
+                  >
                   <h3 class="blog__card-title">ウミガメと泳ぐ</h3>
                   <p class="blog__card-text">
                     ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
@@ -563,14 +572,14 @@
                   <img
                     src="/assets/images/blog/img-blog_03.webp"
                     alt="珊瑚礁に隠れるカクレクマノミ"
-                    width=""
-                    height=""
                     loading="lazy"
                     decoding="async"
                   />
                 </figure>
                 <div class="blog__card-body">
-                  <date class="blog__card-date">2023.11/17</date>
+                  <time datetime="2023-11-17" class="blog__card-date"
+                    >2023.11/17</time
+                  >
                   <h3 class="blog__card-title">カクレクマノミ</h3>
                   <p class="blog__card-text">
                     ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
@@ -763,11 +772,10 @@
                   <source
                     media="(min-width: 768px)"
                     srcset="/assets/images/price/img-price-pc_01.webp"
-                    alt="水中にたくさんいる赤い熱帯魚"
                   />
                   <img
                     src="/assets/images/price/img-price-sp_01.webp"
-                    alt="水中を泳ぐ海亀"
+                    alt="水中を泳ぐウミガメ"
                     decoding="async"
                   />
                 </picture>
@@ -853,18 +861,25 @@
         <div class="footer__brand">
           <h2 class="footer__logo">
             <a href="./"
-              ><img src="./assets/images/common/logo-codeups_01.webp" alt=""
+              ><img
+                src="./assets/images/common/logo-codeups_01.webp"
+                alt="CodeUps"
             /></a>
           </h2>
           <ul class="footer__sns">
             <li class="footer__sns-item">
               <a href="#" class="footer__sns-link" aria-label="Facebook">
-                <img src="./assets/images/footer/icon-footer_02.webp" alt="" />
+                <img
+                  src="./assets/images/footer/icon-footer_02.webp"
+                  alt="Facebookアイコン"
+                />
               </a>
             </li>
             <li class="footer__sns-item">
               <a href="#" class="footer__sns-link" aria-label="Instagram">
-                <img src="./assets/images/footer/icon-footer_03.webp" alt=""
+                <img
+                  src="./assets/images/footer/icon-footer_03.webp"
+                  alt="Instagramアイコン"
               /></a>
             </li>
           </ul>

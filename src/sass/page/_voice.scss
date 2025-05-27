@@ -77,7 +77,7 @@
   width: 50%;
   border-bottom: 1px solid $d-green;
   @include mq("md") {
-    justify-content: bottom;
+    justify-content: end;
     flex-grow: 1; // 残りの余白を埋める
     // width: auto; // 必要に応じて幅を自動調整
     // padding-left: rem(strip-unit(48px));

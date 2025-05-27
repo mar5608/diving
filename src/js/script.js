@@ -3,6 +3,79 @@
 // });
 
 /************************
+ * loading
+ ************************/
+
+// //HTML ドキュメントが完全に読み込まれた後に JavaScript を実行する
+// document.addEventListener("DOMContentLoaded", () => {
+//   //要素の取得
+//   const loading = document.querySelector(".loading");
+//   // const loadingbg = document.querySelector(".loadingbg");
+//   const contentsElement = document.querySelector(".main .hidden");
+//   // セッションストレージからフラグを取得
+//   const isFirstLoad = !sessionStorage.getItem("isFirstLoad");
+//   if (isFirstLoad) {
+//     console.log("初回アクセスです");
+//     // ローディング画面を表示
+//     loading.style.display = "block";
+//     // loading.classList.add("active");
+//     setTimeout(() => {
+//       loading.classList.add("active");
+//     }, 10);
+
+//     // 2秒後にローディング画面の `active` クラスを削除（フェードアウト開始）
+//     setTimeout(() => {
+//       loading.classList.remove("active");
+
+//       // さらに 0.5秒後にローディング画面を完全に非表示
+//       setTimeout(() => {
+//         loading.style.display = "none";
+//         // `.wrapper.hidden` の `hidden` クラスを削除し、コンテンツを表示
+//         if (contentsElement) {
+//           contentsElement.classList.remove("hidden");
+//         }
+//       }, 500);
+//     }, 2000);
+
+//     // sessionStorage に初回訪問の記録を保存
+//     sessionStorage.setItem("isFirstLoad", "true");
+//   } else {
+//     console.log("2回目以降のアクセスです");
+
+//     // すぐに `.wrapper.hidden` を表示
+//     if (contentsElement) {
+//       contentsElement.classList.remove("hidden");
+//     }
+//     // ローディング画面を即座に非表示
+//     // loading.style.display = "none"; // すぐに非表示
+//     if (loading) {
+//       loading.style.display = "none"; // loading 要素が存在する場合のみ非表示にする
+//     } else {
+//       console.log(".loading 要素が見つかりません");
+//     }
+//   }
+// });
+
+// //ページが読み込まれたらすぐに動かしたい場合の記述;
+// $(window).on("load", function () {
+//   $(".loading").delay(1200).fadeOut("slow"); //ロゴを1.2秒でフェードアウトする記述
+
+//   //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+//   $(".loading")
+//     .delay(1500)
+//     .fadeOut("slow", function () {
+//       $("body").addClass("appear"); //フェードアウト後bodyにappearクラス付与
+
+//       // var h = $(window).height(); //ブラウザの高さを取得
+//       // $(".loadingbg").css({
+//       //   "border-width": h, //ボーダーの太さにブラウザの高さを代入
+//       //   "animation-name": "backBoxAnime", //animation-nameを定義
+//       // });
+//     });
+//   //=====ここまでローディングエリア（loadingエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+// });
+
+/************************
  * drawer
  ************************/
 // drawerのアイコンをクリックしたときの処理

@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.loading {
+}
+
+.loading__image-wrapper {
+  position: relative;
+  width: rem(strip-unit(1440px)); /* 画像の実際の横幅に合わせて */
+  height: 400px; /* 高さも同様に調整 */
+  overflow: hidden;
+}
+
+.loading__image-part {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("../assets/images/fv/img-top-pc_01.webp"); /* 1枚の画像を指定 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 1s ease;
+}
+
+.image-part--left {
+  left: 0;
+  background-position: left;
+  transform: translateX(-80px);
+}
+
+.image-part--right {
+  right: 0;
+  background-position: right;
+  transform: translateX(80px);
+}
+
+/* アニメーション時に中央へ */
+.image-wrapper.animate .image-part--left {
+  transform: translateX(0);
+}
+
+.image-wrapper.animate .image-part--right {
+  transform: translateX(0);
+}
