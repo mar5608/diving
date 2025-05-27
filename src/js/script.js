@@ -148,7 +148,7 @@ new Splide("#js-fv-splide", splideOptionFv).mount();
 let splideOptionCampaign = {
   type: "loop", // ループを有効にする
   gap: 40, // スライド間の隙間（ピクセル）
-  fixedWidth: 334, // 固定幅を設定（334px）
+  fixedWidth: 333, // 固定幅を設定（333px）
   // fixedHeight: 445, // 高さ
   autoplay: false, // 自動再生を有効にする
   interval: 4000, // 自動再生の間隔（ミリ秒）

@@ -32,7 +32,7 @@
   margin-top: rem(strip-unit(30px));
   padding-right: rem(strip-unit(4px));
   @include mq(md) {
-    margin-top: rem(strip-unit(80px));
+    margin-top: rem(strip-unit(70px));
   }
 }
 .campaign__list {
@@ -57,7 +57,7 @@
 
 .campaign__track {
   @include mq(md) {
-    margin-top: rem(strip-unit(-40px));
+    margin-top: rem(strip-unit(-48px));
   }
 }
 
@@ -106,6 +106,7 @@
   padding-inline: rem(strip-unit(16px));
   @include mq(md) {
     padding-top: rem(strip-unit(24px));
+    padding-bottom: rem(strip-unit(40px));
   }
 }
 
@@ -120,7 +121,9 @@
   padding-bottom: rem(strip-unit(2px));
   // padding-bottom: rem(strip-unit(2px));
   @include mq(md) {
-    padding-inline: rem(strip-unit(14px));
+    padding-inline: rem(strip-unit(15px));
+    padding-top: rem(strip-unit(5px));
+    padding-bottom: rem(strip-unit(4px));
   }
 }
 
@@ -157,9 +160,9 @@
   font-size: rem(strip-unit(14px));
   line-height: 1.71429; /* 24px 171.429% */
   @include mq(md) {
-    margin-top: rem(strip-unit(8px));
+    margin-top: rem(strip-unit(5px));
     font-size: rem(strip-unit(16px));
-    margin-left: rem(strip-unit(-20px));
+    margin-left: rem(strip-unit(-16px));
   }
 }
 
@@ -191,15 +194,17 @@
     translate: 0 -50%;
     position: absolute;
     left: 0;
-    border: 1px solid red;
-
+    border: rem(strip-unit(1px)) solid red;
     width: 100%;
   }
   @include mq(md) {
     font-size: rem(strip-unit(24px));
-    padding-bottom: rem(strip-unit(6px));
+    padding-bottom: rem(strip-unit(2px));
     // padding-left: rem(strip-unit(18px));
     // width: rem(strip-unit(149px));
+    &::after {
+      top: 45%;
+    }
   }
 }
 
@@ -222,16 +227,16 @@
     display: flex;
     flex-direction: row;
     justify-content: end;
-    gap: rem(strip-unit(calc(80px * 2)));
+    gap: rem(strip-unit(136px));
     align-items: center;
-    margin-right: rem(strip-unit(140px));
+    margin-right: rem(strip-unit(125px));
   }
 }
 
 /* 矢印のクリック範囲など */
 .campaign__arrow {
   position: absolute;
-  top: rem(strip-unit(-24px));
+  top: rem(strip-unit(-34px));
   background-color: transparent; /* ボタンの背景を透明にする */
   height: rem(strip-unit(80px));
   width: rem(strip-unit(80px));
@@ -244,13 +249,13 @@
 .campaign__arrow-prev {
   position: relative;
   @include mq(md) {
-    left: rem(strip-unit(40px));
+    // left: rem(strip-unit(57px));
   }
   // 横棒
   &::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 54%;
     translate: 50% -50%;
     // left: calc(100% + 6px);
     left: 0;
@@ -265,10 +270,10 @@
   &::after {
     content: "";
     position: absolute;
-    top: calc(50% - 1.7px);
+    top: calc(50% - 1.5px);
     translate: 0 -50%;
     rotate: -45deg;
-    left: calc(50% - 22px);
+    left: calc(50% - 20px);
     width: 10px;
     height: 1px;
     background: $d-green;
@@ -286,7 +291,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 54%;
     translate: 50% -50%;
     // left: calc(100% + 6px);
     left: 0;
@@ -301,10 +306,10 @@
   &::after {
     content: "";
     position: absolute;
-    top: calc(50% - 1.7px);
+    top: calc(50% - 1.5px);
     translate: 0 -50%;
     rotate: 45deg;
-    left: calc(50% + 16px);
+    left: calc(50% + 12px);
     width: 10px;
     height: 1px;
     background: $d-green;

@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: column;
   gap: rem(strip-unit(4px));
+  @include mq(md) {
+    gap: rem(strip-unit(8px));
+  }
 }
 
 .title-en {
