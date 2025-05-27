@@ -102,6 +102,7 @@
   font-size: rem(strip-unit(10px));
   font-weight: $normal;
   line-height: 1.5; /* 150% */
+  margin-top: rem(strip-unit(4px));
 }
 
 .drawer-icon {
@@ -235,7 +236,8 @@
 .drawer-content__heading {
   padding-left: rem(strip-unit(20px));
   font-weight: $bold;
-  line-height: 1.125; /* 18px 112.5% */
+  // line-height: 1.125; /* 18px 112.5% */
+  line-height: 1.1;
   letter-spacing: -0.15em;
   margin-top: rem(strip-unit(14px));
   position: relative;

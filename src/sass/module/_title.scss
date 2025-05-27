@@ -2,6 +2,9 @@
 
 .title {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: rem(strip-unit(4px));
 }
 
 .title-en {
@@ -20,6 +23,10 @@
   color: $d-green;
   line-height: 1.5; /* 18px */
 }
+
+/*----------------------------------
+    title blogバージョン
+-----------------------------------*/
 
 .blog__title {
   color: $white;
