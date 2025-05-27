@@ -32,14 +32,16 @@
 -----------------------------------*/
 
 .blog__title {
-  color: $white;
-
-  span {
-    color: $b-gray;
-  }
-
-  .title-jp {
+  @include mq(md) {
     color: $white;
+
+    span {
+      color: $b-gray;
+    }
+
+    .title-jp {
+      color: $white;
+    }
   }
 }
 

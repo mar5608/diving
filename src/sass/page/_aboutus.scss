@@ -1,9 +1,11 @@
 @use "global" as *;
 
 .aboutus {
-  // margin-top: rem(strip-unit(40px));
+  margin-top: rem(strip-unit(80px));
+  margin-bottom: rem(strip-unit(40px));
   @include mq(md) {
     margin-top: rem(strip-unit(-20px));
+    padding-bottom: rem(strip-unit(120px));
   }
 }
 
@@ -140,11 +142,12 @@
 }
 
 .aboutus__button {
-  margin-top: rem(strip-unit(30px));
+  margin-top: rem(strip-unit(26px));
   //   margin-inline: auto;
   //   display: flex;
   //   justify-content: center;
   //   align-items: center;
+  padding-right: rem(strip-unit(16px));
   @include mq(md) {
     margin-top: rem(strip-unit(40px));
   }

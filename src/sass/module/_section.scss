@@ -1,12 +1,12 @@
 @use "global" as *;
 
-.section {
-  // margin-top: rem(strip-unit(40px));
-  padding-top: rem(strip-unit(40px));
-  padding-bottom: rem(strip-unit(80px));
-  @include mq(md) {
-    // margin-top: rem(strip-unit(80px));
-    padding-top: rem(strip-unit(80px));
-    padding-bottom: rem(strip-unit(80px));
-  }
-}
+// .section {
+//   margin-top: rem(strip-unit(40px));
+//   // padding-top: rem(strip-unit(40px));
+//   // padding-bottom: rem(strip-unit(80px));
+//   @include mq(md) {
+//     margin-top: rem(strip-unit(80px));
+//     // padding-top: rem(strip-unit(80px));
+//     // padding-bottom: rem(strip-unit(80px));
+//   }
+// }

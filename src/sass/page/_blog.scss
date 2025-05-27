@@ -1,9 +1,13 @@
 @use "global" as *;
 
 .blog {
-  background: url("/assets/images/blog/bg-blog_01.webp") top center/contain
-    no-repeat;
   position: relative;
+  // margin-top: rem(strip-unit(70px));
+  padding-top: rem(strip-unit(80px));
+  @include mq(md) {
+    background: url("/assets/images/blog/bg-blog_01.webp") top center/contain
+      no-repeat;
+  }
 }
 
 .blog__decoration {

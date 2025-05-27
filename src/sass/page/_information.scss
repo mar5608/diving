@@ -2,6 +2,9 @@
 
 .information {
   background: $b-gray;
+  margin-top: rem(strip-unit(70px));
+  padding-top: rem(strip-unit(80px));
+  padding-bottom: rem(strip-unit(80px));
 }
 
 .information__wrapper {
