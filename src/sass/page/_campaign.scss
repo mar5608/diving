@@ -16,6 +16,7 @@
 
 .campaign__wrapper {
   margin-top: rem(strip-unit(8px));
+  padding-inline: rem(strip-unit($paddingSide-sp));
   @include mq(md) {
     width: rem(strip-unit(1280px));
     margin-left: auto;
@@ -30,7 +31,7 @@
   align-items: center;
   margin-top: rem(strip-unit(40px));
   @include mq(md) {
-    margin-top: rem(strip-unit(40px));
+    margin-top: rem(strip-unit(80px));
   }
 }
 .campaign__list {
@@ -38,25 +39,23 @@
 }
 
 .campaign__slide {
+  background: $white;
+  // box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: rem(strip-unit(2px)) rem(strip-unit(2px)) rem(strip-unit(10px))
+    rem(strip-unit(0px)) rgba(0, 0, 0, 0.25);
   margin-top: rem(strip-unit(24px));
   margin-block: rem(strip-unit(10px));
 
   @include mq(md) {
-    margin-top: rem(strip-unit(40px));
+    // margin-top: rem(strip-unit(40px));
+    margin-top: rem(strip-unit(0px));
   }
 }
 
-.splide__track {
-}
-
-.splide__list {
-}
-
-.campaign__list {
-}
-
-.campaign__slide {
-  // width: rem(strip-unit(280px));
+.campaign__track {
+  @include mq(md) {
+    margin-top: rem(strip-unit(-40px));
+  }
 }
 
 .slide__img-wrapper {
@@ -96,14 +95,6 @@
   //     aspect-ratio: 334 / 223;
   //   }
   // }
-}
-
-.campaign__slide {
-  background: $white;
-  // box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: rem(strip-unit(2px)) rem(strip-unit(2px)) rem(strip-unit(10px))
-    rem(strip-unit(0px)) rgba(0, 0, 0, 0.25);
-  // width: rem(strip-unit(280px));
 }
 
 .slide__content {
@@ -215,45 +206,99 @@
   }
 }
 
-.splide__arrow-button {
-  background-color: transparent; /* ボタンの背景を透明にする */
-  height: 50px;
-  transition: 0.2s;
-  width: 30px;
-  color: $d-green; /* 矢印の色を緑にする */
+.campaign__arrows {
+  @include mq(md) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: rem(strip-unit(calc(80px * 2)));
+    align-items: center;
+    margin-right: rem(strip-unit(140px));
+  }
+}
 
+/* 矢印のクリック範囲など */
+.campaign__arrow {
+  position: absolute;
+  top: rem(strip-unit(-24px));
+  background-color: transparent; /* ボタンの背景を透明にする */
+  height: rem(strip-unit(80px));
+  width: rem(strip-unit(80px));
+  border-radius: 50%;
+  border: rem(strip-unit(1px)) solid $d-green; /* ボタンの枠線を緑にする */
+  // transition: 0.2s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.campaign__arrow-prev {
+  position: relative;
+  @include mq(md) {
+    left: rem(strip-unit(40px));
+  }
+  // 横棒
   &::before {
     content: "";
-    display: block;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    border-left: rem(strip-unit(5px)) solid transparent;
-    border-right: rem(strip-unit(5px)) solid transparent;
-    border-top: rem(strip-unit(10px)) solid $d-green; /* 矢印の色を緑にする */
+    translate: 50% -50%;
+    // left: calc(100% + 6px);
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: $d-green;
+    // transition: width 0.5s ease;
+    transition: 0.3s;
   }
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* ホバー時の背景色 */
+
+  // 斜め棒
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1.7px);
+    translate: 0 -50%;
+    rotate: -45deg;
+    left: calc(50% - 22px);
+    width: 10px;
+    height: 1px;
+    background: $d-green;
+    // transition: left 0.5s ease;
+    transition: 0.3s;
   }
 }
 
-/* 前の矢印 */
-.prev::before {
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
-}
-/* 次の矢印 */
-.next::before {
-  clip-path: polygon(0 0, 0 100%, 100% 50%);
-}
-/* 次のスライドが無い場合の矢印 */
-.button:disabled::before {
-  background-color: #ccc;
-}
-/* スライドのサイズ調整 */
-.splide__slide img {
-  height: auto;
-  width: 100%;
+.campaign__arrow-next {
+  position: relative;
+  @include mq(md) {
+    right: rem(strip-unit(40px));
+  }
+  // 横棒
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    translate: 50% -50%;
+    // left: calc(100% + 6px);
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: $d-green;
+    // transition: width 0.5s ease;
+    transition: 0.3s;
+  }
+
+  // 斜め棒
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1.7px);
+    translate: 0 -50%;
+    rotate: 45deg;
+    left: calc(50% + 16px);
+    width: 10px;
+    height: 1px;
+    background: $d-green;
+    // transition: left 0.5s ease;
+    transition: 0.3s;
+  }
 }

@@ -94,23 +94,19 @@ let splideOptionCampaign = {
       arrows: false, // 左右の矢印ボタンも不要であればfalseに
     },
   },
+  // classes: {
+  //   // 矢印関連のクラスを追加
+  //   arrows: "splide__arrows campaign__arrows",
+  //   arrow: "splide__arrow campaign__arrow",
+  //   prev: "splide__arrow--prev campaign__prev",
+  //   next: "splide__arrow--next campaign__next",
+
+  // ページネーション関連のクラスを追加
+  // pagination: "splide__pagination campaign__pagination", // container
+  // page: "splide__pagination__page campaign__page", // each button
+  // },
 };
 new Splide("#js-campaign-splide", splideOptionCampaign).mount();
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   var splide = new Splide("#js-campaign-splide", {
-//     type: "loop", // ループを有効にする
-//     gap: 20, // スライド間の隙間（ピクセル）
-//     perPage: 1.22, // 1ページに3枚表示
-//     autoplay: true, // 自動再生を有効にする
-//     interval: 6000, // 自動再生の間隔（ミリ秒）
-//     speed: 600, // スライド切り替えの速度（ミリ秒）
-//     arrows: false, // 左右の矢印ボタンも不要であればfalseに
-//     pagination: false, // ページネーションを無効にする
-//     pauseOnHover: false,
-//   });
-//   splide.mount();
-// });
 
 /************************
  * 画像の出現アニメーション
