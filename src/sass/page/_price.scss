@@ -14,7 +14,10 @@
     display: block;
     position: absolute;
     bottom: rem(strip-unit(-310px));
-    left: rem(strip-unit(32px));
+    // left: rem(strip-unit(32px));
+    left: calc(
+      50% - clamp(23.125rem, 5.268rem + 37.2vw, 38.75rem)
+    ); //370px->620px | 768px ->1440 px
     width: rem(strip-unit(437px));
     height: rem(strip-unit(437px));
     transform: scaleX(-1); // 横方向に反転

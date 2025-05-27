@@ -15,7 +15,11 @@
   @include mq("md") {
     bottom: rem(strip-unit(-310px));
     // left: rem(strip-unit(32px));
-    left: calc(50vw + rem(strip-unit(300px)));
+    // left: calc(50vw + rem(strip-unit(300px)));
+    left: calc(
+      50% + clamp(9.375rem, -6.339rem + 32.74vw, 23.125rem)
+    ); //150px->370px | 768px ->1440 px
+
     width: rem(strip-unit(301px));
     height: rem(strip-unit(138px));
     transform: scaleX(-1); // 横方向に反転
@@ -25,7 +29,6 @@
 .contact__wrapper {
   display: flex;
   flex-direction: column;
-
   align-items: center;
   padding-inline: rem(strip-unit(25px));
   gap: rem(strip-unit(35px));
