@@ -4,6 +4,9 @@
   position: relative;
   padding-top: rem(strip-unit(80px));
   padding-bottom: rem(strip-unit(84px));
+  @include mq("md") {
+    padding-top: rem(strip-unit(138px));
+  }
 }
 
 .voice__decoration {
@@ -16,7 +19,7 @@
 
 .voice__decoration--top {
   @include mq("md") {
-    top: rem(strip-unit(-40px));
+    top: rem(strip-unit(18px));
     // left: rem(strip-unit(112px));
     left: calc(
       50% - clamp(23.125rem, 5.268rem + 37.2vw, 38.75rem)
@@ -29,7 +32,7 @@
 
 .voice__decoration--bottom {
   @include mq("md") {
-    bottom: rem(strip-unit(10px));
+    bottom: rem(strip-unit(14px));
     // right: rem(strip-unit(180px));
     left: calc(
       50% + clamp(19.25rem, 7.536rem + 24.4vw, 29.5rem)
@@ -41,6 +44,9 @@
 
 .voice__wrapper {
   margin-top: rem(strip-unit(43px));
+  @include mq("md") {
+    margin-top: rem(strip-unit(30px));
+  }
 }
 
 .voice__cards {
@@ -66,7 +72,7 @@
   padding-inline: rem(strip-unit(15px));
   @include mq("md") {
     width: rem(strip-unit(520px));
-    padding-top: rem(strip-unit(24px));
+    padding-top: rem(strip-unit(26px));
     padding-inline: rem(strip-unit(24px));
     gap: rem(strip-unit(40px));
   }
@@ -75,6 +81,9 @@
   display: flex;
   flex-direction: row;
   gap: rem(strip-unit(9px));
+  @include mq("md") {
+    gap: rem(strip-unit(15px));
+  }
 }
 
 .voice__contents {
@@ -89,7 +98,7 @@
     // width: auto; // 必要に応じて幅を自動調整
     // padding-left: rem(strip-unit(48px));
     align-self: flex-end; // 親がflexコンテナの場合
-    gap: rem(strip-unit(4px));
+    gap: rem(strip-unit(11px));
   }
 }
 .voice__meta {
@@ -115,6 +124,8 @@
   @include mq("md") {
     font-size: rem(strip-unit(24px));
     // line-height: 1.2; /* 24px 120% */
+    padding-bottom: rem(strip-unit(4px));
+    line-height: 1.38; /* % オリジナル*/
   }
 }
 
@@ -143,7 +154,10 @@
   //   white-space: nowrap; // テキストを折り返さず一行に
   //   flex: 0 0 auto; // ←これが超重要！親がflexでも横に広がらないように完全に防止
   @include mq(md) {
-    margin-right: rem(strip-unit(8px));
+    // margin-right: rem(strip-unit(8px));
+    padding-top: rem(strip-unit(5px));
+    padding-bottom: rem(strip-unit(7px));
+    padding-inline: rem(strip-unit(15px));
   }
 }
 

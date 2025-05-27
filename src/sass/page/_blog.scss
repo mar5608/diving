@@ -6,6 +6,7 @@
   padding-top: rem(strip-unit(80px));
   padding-bottom: rem(strip-unit(3px));
   @include mq(md) {
+    padding-top: rem(strip-unit(100px));
     background: url("/assets/images/blog/bg-blog_01.webp") top center/contain
       no-repeat;
   }
@@ -91,4 +92,7 @@
 .blog__button {
   margin-top: rem(strip-unit(40px));
   padding-right: rem(strip-unit(4px));
+  @include mq("md") {
+    margin-top: rem(strip-unit(82px));
+  }
 }

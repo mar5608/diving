@@ -3,10 +3,9 @@
 .campaign {
   margin-top: rem(strip-unit(40px));
   margin-bottom: rem(strip-unit(40px));
-  // padding-bottom: rem(strip-unit(40px));
   @include mq(md) {
-    // margin-top: rem(strip-unit(120px));
-    margin-top: rem(strip-unit(40px));
+    margin-top: rem(strip-unit(122px));
+    margin-bottom: rem(strip-unit(80px));
   }
 }
 

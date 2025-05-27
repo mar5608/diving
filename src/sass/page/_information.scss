@@ -5,11 +5,15 @@
   margin-top: rem(strip-unit(72px));
   padding-top: rem(strip-unit(80px));
   padding-bottom: rem(strip-unit(82px));
+  @include mq("md") {
+    padding-top: rem(strip-unit(99px));
+    padding-bottom: rem(strip-unit(99px));
+  }
 }
 
 .information__wrapper {
   @include mq("md") {
-    margin-top: rem(strip-unit(48px));
+    margin-top: rem(strip-unit(40px));
   }
 }
 
