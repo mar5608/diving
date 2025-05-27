@@ -89,26 +89,76 @@
 }
 
 .footer__column {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  gap: rem(strip-unit(24px));
+  gap: rem(strip-unit(23px));
 
   &:nth-child(1) {
     order: 1; // デフォルトは順番通り
+    .footer__heading {
+      &:not(:first-child) {
+        //私たちについて
+        // border: 1px solid red;
+        margin-top: rem(strip-unit(15px));
+      }
+    }
   }
 
   &:nth-child(2) {
     // border: 1px solid red;
     order: 3; // 3番目に表示
+    .footer__heading {
+      &:nth-child(1) {
+        //ダイビング情報
+        // border: 1px solid red;
+        margin-top: rem(strip-unit(12px));
+      }
+      &:nth-child(3) {
+        //ブログ
+        // border: 1px solid red;
+        margin-top: rem(strip-unit(16px));
+      }
+      // margin-top: rem(strip-unit(12px));
+    }
   }
 
   &:nth-child(3) {
     // border: 1px solid blue;
     order: 2; // 2番目に表示
+    padding-left: rem(strip-unit(12px));
+    .footer__heading {
+      &:nth-child(2) {
+        // border: 1px solid red;
+        margin-top: rem(strip-unit(12px));
+      }
+    }
   }
 
   &:nth-child(4) {
     order: 4; // 4番目に表示
+    padding-left: rem(strip-unit(12px));
+    .footer__heading {
+      &:nth-child(1) {
+        // border: 1px solid red;
+        margin-top: rem(strip-unit(12px));
+      }
+      &:nth-child(2) {
+        //プライバシーポリシー
+        // border: 1px solid red;
+        margin-top: rem(strip-unit(13px));
+      }
+      &:nth-child(3) {
+        //利用規約
+        // border: 1px solid red;
+        margin-top: rem(strip-unit(13px));
+      }
+      &:nth-child(4) {
+        //利用規約
+        // border: 1px solid red;
+        margin-top: rem(strip-unit(13px));
+      }
+    }
   }
 
   &:nth-child(2),
@@ -146,7 +196,7 @@
 }
 
 .footer__heading {
-  padding-left: rem(strip-unit(26px));
+  padding-left: rem(strip-unit(20px)); //26px
   font-weight: $bold;
   line-height: 1.125; /* 18px 112.5% */
   letter-spacing: -0.15em;
@@ -182,7 +232,7 @@
 }
 
 .footer__item {
-  padding-left: rem(strip-unit(28px));
+  padding-left: rem(strip-unit(23px));
   line-height: 1.125; /* 112.5% 18px */
   @include mq(md) {
     padding-left: rem(strip-unit(22px));
@@ -195,6 +245,8 @@
   font-size: rem(strip-unit(12px));
 
   line-height: 1.5; /* 18px 150% */
+  margin-top: rem(strip-unit(38px));
+  letter-spacing: 0.08em;
   //   text-align: justify;
   @include mq(md) {
     margin-top: rem(strip-unit(80px));
