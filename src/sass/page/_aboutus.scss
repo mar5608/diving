@@ -2,6 +2,9 @@
 
 .aboutus {
   // margin-top: rem(strip-unit(40px));
+  @include mq(md) {
+    margin-top: rem(strip-unit(-20px));
+  }
 }
 
 .aboutus__wrapper {
@@ -70,7 +73,7 @@
   @include mq(md) {
     position: absolute;
     display: block;
-    bottom: rem(strip-unit(-98px));
+    bottom: rem(strip-unit(-90px));
     // left: calc(50% + rem(strip-unit(30px)));
     // left: calc(100% - $padding-pc - rem(strip-unit(56px)));
     left: calc(
@@ -143,7 +146,7 @@
   //   justify-content: center;
   //   align-items: center;
   @include mq(md) {
-    margin-top: rem(strip-unit(50px));
+    margin-top: rem(strip-unit(40px));
   }
 }
 
