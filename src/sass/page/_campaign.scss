@@ -68,17 +68,22 @@
   // @include mq(md) {
   //     width: rem(strip-unit(334px));
   // }
-  height: rem(strip-unit(188px));
+  // height: rem(strip-unit(188px));
   img {
     aspect-ratio: 280 / 188;
     width: 100%;
-    height: auto;
+    // height: auto;
     object-fit: cover;
   }
   @include mq(md) {
-    height: rem(strip-unit(223px));
+    // height: rem(strip-unit(223px));
+    // height: clamp(11.75rem, 5.188rem + 13.67vw, 13.938rem);
+    // 188px->223px | 768px->1024px
+
     img {
       aspect-ratio: 334 / 223;
+      // height: auto;
+      // object-fit: cover;
     }
   }
 }
@@ -237,8 +242,8 @@
 /* 矢印のクリック範囲など */
 .campaign__arrow {
   position: absolute;
-  top: rem(strip-unit(-34px));
   background-color: transparent; /* ボタンの背景を透明にする */
+  top: rem(strip-unit(-34px));
   height: rem(strip-unit(80px));
   width: rem(strip-unit(80px));
   border-radius: 50%;
@@ -286,7 +291,7 @@
 .campaign__arrow-next {
   position: relative;
   @include mq(md) {
-    right: rem(strip-unit(40px));
+    // right: rem(strip-unit(40px));
   }
   // 横棒
   &::before {

@@ -45,7 +45,8 @@
 .blog__card {
   background: $white;
   margin-inline: auto;
-  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: rem(strip-unit(2px)) rem(strip-unit(2px)) rem(strip-unit(10px))
+    rem(strip-unit(0px)) rgba(0, 0, 0, 0.25);
   padding-top: rem(strip-unit(16px));
   padding-bottom: rem(strip-unit(24px));
   padding-inline: rem(strip-unit(16px));
