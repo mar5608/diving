@@ -225,6 +225,17 @@
 
   &:nth-child(4) {
     order: 4; // 4番目に表示
+    .drawer-content__heading {
+      &:nth-child(2) {
+        // border: 1px solid pink;
+        &::before {
+          position: absolute;
+          content: "";
+          top: 28%;
+          transform: translateY(-50%);
+        }
+      }
+    }
   }
 
   &:nth-child(2),
