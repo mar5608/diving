@@ -15,6 +15,12 @@
 //   }
 // }
 
+.campaign__content {
+  @include mq(md) {
+    position: relative;
+  }
+}
+
 .campaign__wrapper {
   margin-top: rem(strip-unit(8px));
   padding-inline: rem(strip-unit($padding-sp));
@@ -22,6 +28,8 @@
     width: rem(strip-unit(1280px));
     margin-left: auto;
     padding-left: rem(strip-unit(20px));
+    margin-top: rem(strip-unit(86px));
+    // padding-top: rem(strip-unit(40px));
   }
 }
 
@@ -229,21 +237,24 @@
 
 .campaign__arrows {
   @include mq(md) {
-    position: relative;
+    // position: relative;
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: end;
-    gap: rem(strip-unit(136px));
+    gap: rem(strip-unit(112px));
     align-items: center;
     margin-right: rem(strip-unit(125px));
+    top: rem(strip-unit(-66px));
+    left: calc(50% + clamp(5rem, -13.462rem + 28.85vw, 12.5rem));
+    // 80px->200px | 1024px->1440px
   }
 }
 
 /* 矢印のクリック範囲など */
 .campaign__arrow {
-  position: absolute;
   background-color: transparent; /* ボタンの背景を透明にする */
-  top: rem(strip-unit(-34px));
+  // top: rem(strip-unit(-34px));
   height: rem(strip-unit(80px));
   width: rem(strip-unit(80px));
   border-radius: 50%;
