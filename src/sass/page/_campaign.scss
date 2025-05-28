@@ -272,11 +272,11 @@
   &::before {
     content: "";
     position: absolute;
-    top: 54%;
+    top: calc(50% + rem(strip-unit(1.7px))); //54%;
     transform: translateY(-50%);
     transform: translateX(-50%);
     // left: calc(100% + 6px);
-    left: 50%;
+    left: 52%;
     width: 40px;
     // width: clamp(2rem, 1.312rem + 1.32vw, 2.5rem);
     height: 1px;
@@ -289,7 +289,7 @@
   &::after {
     content: "";
     position: absolute;
-    top: calc(50% - 1.5px);
+    top: calc(50% + rem(strip-unit(-1.7px)));
     translate: 0 -50%;
     rotate: -45deg;
     left: calc(50% - 20px);
@@ -310,7 +310,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 54%;
+    top: 52%;
     transform: translateY(-50%);
     transform: translateX(-50%);
     // left: calc(100% + 6px);

@@ -42,7 +42,7 @@
   background-position: left;
   // transform: translateX(-80px);
   clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-  background: url("/assets/images/fv/img-top-pc_01.webp") top center/contain
+  background: url("../images/fv/img-top-pc_01.webp") top center/contain
     no-repeat;
 }
 
@@ -51,7 +51,7 @@
   background-position: right;
 
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-  background: url("/assets/images/fv/img-top-pc_01.webp") top center/contain
+  background: url("../images/fv/img-top-pc_01.webp") top center/contain
     no-repeat;
 }
 

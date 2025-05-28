@@ -45,9 +45,9 @@
     &::before {
       content: "";
       position: absolute;
-      top: calc(50%);
+      top: calc(50% + rem(strip-unit(1.8px)));
       translate: 0 -50%;
-      left: calc(100% + 6px);
+      left: calc(100% + rem(strip-unit(9px)));
       width: 40px;
       height: 1px;
       background: $white;
@@ -59,7 +59,7 @@
     &::after {
       content: "";
       position: absolute;
-      top: calc(50% - 1.7px);
+      top: calc(50% + rem(strip-unit(-1.7px)));
       translate: 0 -50%;
       rotate: 45deg;
       left: calc(100% + 40px);
