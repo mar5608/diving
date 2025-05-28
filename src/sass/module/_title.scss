@@ -58,5 +58,8 @@
   }
   .title-jp {
     margin-top: rem(strip-unit(-8px));
+    @include mq(md) {
+      margin-top: rem(strip-unit(-16px));
+    }
   }
 }

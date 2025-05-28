@@ -6,6 +6,12 @@
   padding-top: rem(strip-unit(80px));
   padding-bottom: rem(strip-unit(82px));
   position: relative;
+  @include mq("md") {
+    margin-top: rem(strip-unit(40px));
+    // margin-top: 0;
+    padding-top: rem(strip-unit(100px));
+    padding-bottom: rem(strip-unit(100px));
+  }
 }
 
 .price__decoration {
@@ -13,7 +19,7 @@
   @include mq("md") {
     display: block;
     position: absolute;
-    bottom: rem(strip-unit(-310px));
+    bottom: rem(strip-unit(-180px));
     // left: rem(strip-unit(32px));
     left: calc(
       50% - clamp(23.125rem, 5.268rem + 37.2vw, 38.75rem)
@@ -72,19 +78,30 @@
 .price-table__item {
   display: flex;
   justify-content: space-between;
-
   padding-top: 0.5rem;
+  @include mq(md) {
+    width: rem(strip-unit(492px));
+    display: flex; // 必要に応じて調整
+    align-items: center; // 中央揃え（必要に応じて）
+    // letter-spacing: 0.128em;
+  }
 }
 
 .price-table__name {
   font-size: rem(strip-unit(14px));
   line-height: 1.71429; /* 24px 171.429% */
+  @include mq(md) {
+    letter-spacing: 0.142em;
+  }
 }
 
 .price-table__price {
   text-align: right;
   font-size: rem(strip-unit(14px));
   line-height: 1.71429; /* 24px 171.429% */
+  @include mq(md) {
+    letter-spacing: 0.03em;
+  }
 }
 
 .price__img {
@@ -120,6 +137,6 @@
 .price__button {
   padding-right: rem(strip-unit(4px));
   @include mq("md") {
-    margin-top: rem(strip-unit(40px));
+    margin-top: rem(strip-unit(80px));
   }
 }

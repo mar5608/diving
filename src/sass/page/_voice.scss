@@ -6,6 +6,7 @@
   padding-bottom: rem(strip-unit(84px));
   @include mq("md") {
     padding-top: rem(strip-unit(138px));
+    padding-bottom: rem(strip-unit(102px));
   }
 }
 

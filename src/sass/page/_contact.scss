@@ -4,6 +4,10 @@
   position: relative;
   margin-top: rem(strip-unit(80px));
   margin-bottom: rem(strip-unit(100px));
+  @include mq("md") {
+    margin-top: rem(strip-unit(140px));
+    margin-bottom: rem(strip-unit(160px));
+  }
 }
 
 .contact__decoration {
@@ -18,9 +22,9 @@
   height: rem(strip-unit(50px));
   transform: scaleX(-1); // 横方向に反転
   @include mq("md") {
-    bottom: rem(strip-unit(-310px));
+    top: rem(strip-unit(-36px));
     // left: rem(strip-unit(32px));
-    // left: calc(50vw + rem(strip-unit(300px)));
+
     left: calc(
       50% + clamp(9.375rem, -6.339rem + 32.74vw, 23.125rem)
     ); //150px->370px | 768px ->1440 px
@@ -39,10 +43,12 @@
   gap: rem(strip-unit(40px));
   @include mq("md") {
     flex-direction: row;
+    gap: rem(strip-unit(22px));
     background: $white;
     box-shadow: rem(strip-unit(4px)) rem(strip-unit(4px)) rem(strip-unit(10px))
       0px rgba(0, 0, 0, 0.25);
-    padding-block: rem(strip-unit(80px));
+    padding-bottom: rem(strip-unit(80px));
+    padding-top: rem(strip-unit(68px));
   }
 }
 
@@ -55,6 +61,7 @@
     width: 52%;
     padding-left: rem(strip-unit(24px));
     padding-right: rem(strip-unit(56px));
+    padding-top: rem(strip-unit(16px));
   }
 }
 
@@ -62,6 +69,7 @@
   @include mq("md") {
     width: 48%;
     border-left: rem(strip-unit(1px)) solid $d-green;
+    padding-top: rem(strip-unit(18px));
   }
 }
 
@@ -92,7 +100,7 @@
   @include mq("md") {
     text-align: left;
     flex-direction: row;
-    margin-top: rem(strip-unit(16px));
+    margin-top: rem(strip-unit(22px));
   }
 }
 
@@ -123,6 +131,7 @@
   @include mq("md") {
     column-gap: rem(strip-unit(20px));
     text-align: left;
+    padding-top: rem(strip-unit(0px));
   }
 }
 
@@ -148,8 +157,15 @@
   padding-top: rem(strip-unit(6px));
   line-height: 1.28571; /* 18px 128.571% */
   letter-spacing: -0.13em;
+  @include mq(md) {
+    padding-right: rem(strip-unit(4px));
+  }
 }
 
 .contact__button {
   margin-top: rem(strip-unit(40px));
+  @include mq(md) {
+    margin-top: rem(strip-unit(40px));
+    padding-right: rem(strip-unit(8px));
+  }
 }
