@@ -21,10 +21,6 @@ $third-font-family: "Gotu", sans-serif; //ウェイト400のみ
 $head-font-family: "Lato", sans-serif; //TOP
 // ※検証ツールでしっかり反映されているか確認する
 
-body {
-  font-family: $base-font-family;
-}
-
 // フォントウェイト
 $regular: 300;
 $normal: 400;
@@ -55,3 +51,4 @@ $height-sp: 80px;
 
 // $navGap: rem(strip-unit(60px));
 $listGap: 40px;
+
