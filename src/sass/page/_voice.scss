@@ -33,7 +33,7 @@
 
 .voice__decoration--bottom {
   @include mq("md") {
-    bottom: rem(strip-unit(14px));
+    bottom: rem(strip-unit(30px));
     // right: rem(strip-unit(180px));
     left: calc(
       50% + clamp(19.25rem, 7.536rem + 24.4vw, 29.5rem)
