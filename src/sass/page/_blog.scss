@@ -7,7 +7,7 @@
   padding-bottom: rem(strip-unit(3px));
   @include mq(md) {
     padding-top: rem(strip-unit(100px));
-    background: url("/assets/images/blog/bg-blog_01.webp") top center/contain
+    background: url("../images/blog/bg-blog_01.webp") top center/contain
       no-repeat;
   }
 }
@@ -21,8 +21,6 @@
     left: rem(strip-unit(32px));
     width: rem(strip-unit(437px));
     height: rem(strip-unit(437px));
-    // background: url("/assets/images/blog/icon-blog_01.webp") top top/contain
-    //   no-repeat;
   }
 }
 
