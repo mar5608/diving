@@ -82,7 +82,7 @@
 
   @include mq("md") {
     // grid-template-columns: repeat(4, 1fr);
-    margin-top: rem(strip-unit(20px));
+    margin-top: rem(strip-unit(22px));
     // max-width: rem(strip-unit(1024px));
     // gap: rem(strip-unit(4px));
   }
@@ -169,24 +169,50 @@
   @include mq(md) {
     width: 25%;
     margin-top: rem(strip-unit(0));
-    gap: rem(strip-unit(30px));
+    gap: rem(strip-unit(24px));
 
     &:nth-child(1) {
       order: 1; // デフォルトは順番通り
+      .footer__heading {
+        &:not(:first-child) {
+          //私たちについて
+          margin-top: rem(strip-unit(12px));
+        }
+      }
     }
 
     &:nth-child(2) {
       // border: 1px solid red;
       order: 2;
+      padding-left: rem(strip-unit(16px));
+      .footer__heading {
+        &:nth-child(1) {
+          //ダイビング情報
+          margin-top: rem(strip-unit(0px));
+        }
+        &:nth-child(3) {
+          //ブログ
+          // border: 1px solid red;
+          margin-top: rem(strip-unit(14px));
+        }
+      }
     }
 
     &:nth-child(3) {
       // border: 1px solid blue;
       order: 3;
+      padding-left: rem(strip-unit(16px));
     }
 
     &:nth-child(4) {
       order: 4;
+      padding-left: rem(strip-unit(15px));
+      .footer__heading {
+        &:nth-child(1) {
+          //ダイビング情報
+          margin-top: rem(strip-unit(0px));
+        }
+      }
     }
     &:nth-child(2),
     &:nth-child(4) {
