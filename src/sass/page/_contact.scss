@@ -107,7 +107,9 @@
 .contact__map {
   width: 100%;
   @include mq(md) {
-    width: rem(strip-unit(273px));
+    // width: rem(strip-unit(273px));
+    width: clamp(10.625rem, -15.125rem + 40.23vw, 17.063rem);
+
     margin-left: auto;
   }
   iframe {
