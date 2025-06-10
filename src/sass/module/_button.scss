@@ -13,15 +13,17 @@
   padding-left: rem(strip-unit(40px));
   padding-right: rem(strip-unit(88px));
   color: $white;
+  background-color: $d-green;
 
   font-size: rem(strip-unit(14px));
   font-family: $third-font-family;
   text-align: center;
-  background-color: $d-green;
+
   border: 1px solid transparent;
   //   text-decoration: none;
   transition: 0.3s;
   position: relative;
+  z-index: 1; // z-indexを明示
 
   //擬似要素で枠線を作る
   &::before {
@@ -34,6 +36,25 @@
     height: rem(strip-unit(54px));
     border: 1px solid $d-green;
     z-index: -1;
+  }
+
+  // 追加: 背景スライド用アニメーション
+  &.slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $white; // ホバー時の背景
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left top;
+    transition: transform 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+    z-index: -1;
+  }
+
+  &.slide:hover::after {
+    transform: scaleX(1);
   }
 
   // 擬似要素で矢印を作る
@@ -77,6 +98,9 @@
     background-color: $white;
     border-color: currentColor;
     color: $d-green;
+    // &.slide {
+    //   color: $white; // スライド専用ホバー色（背景色に対して視認性）
+    // }
   }
 
   // hover時
@@ -89,126 +113,12 @@
         &::before,
         &::after {
           background: $d-green;
+          // スライドの場合
+          // .slide & {
+          //   background: $white;
+          // }
         }
       }
     }
   }
 }
-
-// .button__text {
-//   position: relative;
-//   display: inline-block;
-//   width: rem(strip-unit(202px));
-//   max-width: 100%;
-//   height: rem(strip-unit(54px));
-
-//   &::before {
-//     // 擬似要素で矢印を作る
-//     content: "";
-//     display: inline-block;
-//     position: absolute;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     left: rem(strip-unit(139px));
-//     width: rem(strip-unit(20.5px));
-//     height: rem(strip-unit(8.5px));
-//     border-right: 1px solid $white;
-//     transform: rotate(-45deg);
-//     transition: border-color 0.3s ease;
-//     z-index: 1;
-//   }
-
-//   &::after {
-//     // 擬似要素で矢印を作る
-//     content: "";
-//     display: inline-block;
-//     position: absolute;
-//     top: 50%;
-//     left: rem(strip-unit(120px));
-//     width: rem(strip-unit(40px));
-//     height: rem(strip-unit(6px));
-//     border-top: 1px solid $white;
-//     transition: border-color 0.3s ease;
-//     z-index: 1;
-//   }
-// }
-
-/*----------------------------------
-    backup
------------------------------------*/
-
-// .button {
-//   display: block;
-//   position: relative;
-//   z-index: 2;
-//   &::before {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     top: rem(strip-unit(4px));
-//     left: rem(strip-unit(4px));
-//     width: rem(strip-unit(202px));
-//     height: rem(strip-unit(54px));
-//     border: 1px solid $d-green;
-//     z-index: 1;
-//   }
-// }
-
-// .button__text {
-//   position: relative;
-//   display: inline-block;
-//   width: rem(strip-unit(202px));
-//   max-width: 100%;
-//   height: rem(strip-unit(54px));
-//   padding-block: rem(strip-unit(16px));
-//   padding-right: rem(strip-unit(50px));
-//   background-color: $d-green;
-//   border: 1px solid transparent;
-//   color: $white;
-//   font-size: rem(strip-unit(14px));
-//   font-family: $third-font-family;
-//   text-align: center;
-//   //   text-decoration: none;
-//   transition: 0.3s;
-//   &::before {
-//     // 擬似要素で矢印を作る
-//     content: "";
-//     display: inline-block;
-//     position: absolute;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     left: rem(strip-unit(139px));
-//     width: rem(strip-unit(20.5px));
-//     height: rem(strip-unit(8.5px));
-//     border-right: 1px solid $white;
-//     transform: rotate(-45deg);
-//     transition: border-color 0.3s ease;
-//     z-index: 1;
-//   }
-
-//   &::after {
-//     // 擬似要素で矢印を作る
-//     content: "";
-//     display: inline-block;
-//     position: absolute;
-//     top: 50%;
-//     left: rem(strip-unit(120px));
-//     width: rem(strip-unit(40px));
-//     height: rem(strip-unit(6px));
-//     border-top: 1px solid $white;
-//     transition: border-color 0.3s ease;
-//     z-index: 1;
-//   }
-
-//   &:focus,
-//   &:hover {
-//     background-color: $white;
-//     border-color: currentColor;
-//     color: $d-green;
-
-//     &::before,
-//     &::after {
-//       border-color: $d-green;
-//     }
-//   }
-// }
