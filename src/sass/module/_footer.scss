@@ -38,6 +38,11 @@
         width: rem(strip-unit(200px));
       }
     }
+    &:hover {
+      opacity: 0.6; // ホバー時にロゴの透明度を下げます
+      transition: opacity 0.3s ease; // ホバー時のトランジションを追加
+      cursor: pointer; // マウスカーソルが指のアイコンに変わります
+    }
   }
 }
 
@@ -48,6 +53,13 @@
 }
 
 .footer__sns-item {
+  a {
+    &:hover {
+      opacity: 0.6; // ホバー時にロゴの透明度を下げます
+      transition: opacity 0.3s ease; // ホバー時のトランジションを追加
+      cursor: pointer; // マウスカーソルが指のアイコンに変わります
+    }
+  }
 }
 
 .footer__sns-link {
@@ -237,6 +249,14 @@
     margin-top: rem(strip-unit(0));
   }
 
+  a {
+    &:hover {
+      opacity: 0.6; // ホバー時にロゴの透明度を下げます
+      transition: opacity 0.3s ease; // ホバー時のトランジションを追加
+      cursor: pointer; // マウスカーソルが指のアイコンに変わります
+    }
+  }
+
   &::before {
     position: absolute;
     content: "";
@@ -262,6 +282,13 @@
   line-height: 1.125; /* 112.5% 18px */
   @include mq(md) {
     padding-left: rem(strip-unit(22px));
+  }
+  a {
+    &:hover {
+      opacity: 0.6; // ホバー時にロゴの透明度を下げます
+      transition: opacity 0.3s ease; // ホバー時のトランジションを追加
+      cursor: pointer; // マウスカーソルが指のアイコンに変わります
+    }
   }
 }
 
