@@ -2,9 +2,10 @@
 
 .aboutus {
   margin-top: rem(strip-unit(82px));
-  margin-bottom: rem(strip-unit(40px));
+  // margin-top: rem(strip-unit(82px));
+  // margin-bottom: rem(strip-unit(40px));
   @include mq(md) {
-    margin-top: rem(strip-unit(140px));
+    margin-top: rem(strip-unit(144px));
     padding-bottom: rem(strip-unit(66px));
   }
 }

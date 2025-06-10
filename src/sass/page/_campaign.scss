@@ -2,10 +2,10 @@
 
 .campaign {
   margin-top: rem(strip-unit(40px));
-  margin-bottom: rem(strip-unit(40px));
+  // margin-bottom: rem(strip-unit(40px));
   @include mq(md) {
     margin-top: rem(strip-unit(122px));
-    margin-bottom: rem(strip-unit(80px));
+    // margin-bottom: rem(strip-unit(80px));
   }
 }
 
