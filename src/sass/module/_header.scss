@@ -56,6 +56,17 @@
   @include mq(md) {
     display: flex;
     align-items: center;
+    height: 100%;
+    // column-gap: $navGap;
+  }
+}
+
+.header__nav-item {
+  display: none;
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    height: 100%;
     // column-gap: $navGap;
   }
 }
@@ -64,6 +75,7 @@
   display: flex;
   align-items: center;
   column-gap: rem(strip-unit($listGap));
+  height: 100%;
 }
 
 .header__link {
@@ -72,7 +84,12 @@
   transition: color 0.3s; /* hoverする前のクラスにつける*/
   text-align: center;
   position: relative;
-  display: inline-block;
+  // display: inline-block;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // height: 100%;
 
   &::after {
     content: "";
