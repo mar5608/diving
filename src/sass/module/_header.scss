@@ -182,6 +182,7 @@
   // background: color.$red;
   z-index: 99;
   transform: translateX(100%); //コンテンツ分が100%移動
+  transition: transform 0.3s linear, top 0.3s linear; //linear:一定速度
 
   @include mq(md) {
     display: none;
