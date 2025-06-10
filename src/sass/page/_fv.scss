@@ -6,9 +6,13 @@
 
 .fv {
   // margin-top: $height-sp;
+  // 修正後：100dvhでより正確な高さに対応
+  height: 100dvh; // viewportの高さをデバイス基準に固定
   position: relative;
-  @include mq("md") {
+  @include mq(md) {
     // margin-top: $height-pc;
+    // 必要に応じてPCでも100vhを使う場合は切り替える
+    height: 100vh;
   }
 }
 
@@ -67,6 +71,9 @@
 .splide__slide.is-duplicate-active .fv__image,
 .splide__slide.is-prev .fv__image {
   animation: zoomUp 10s linear 0s 1 normal both;
+  height: 100vh;
+}
+.fv__splide {
 }
 
 // .fv__splide .splide__arrow {
@@ -80,6 +87,12 @@
 .fv__image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100vh;
   object-fit: cover;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // aspect-ratio: 1920 / 1080; // 16:9
+  }
 }
