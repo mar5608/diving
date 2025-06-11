@@ -68,12 +68,16 @@
     align-items: center;
     height: 100%;
     // column-gap: $navGap;
+    a {
+      height: 100%;
+    }
   }
 }
 
 .header__nav-list {
   display: flex;
   align-items: center;
+
   column-gap: rem(strip-unit($listGap));
   height: 100%;
 }
@@ -84,17 +88,17 @@
   transition: color 0.3s; /* hoverする前のクラスにつける*/
   text-align: center;
   position: relative;
-  // display: inline-block;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  // height: 100%;
+  justify-content: center;
+  height: 100%;
 
   &::after {
     content: "";
     position: absolute;
-    bottom: rem(strip-unit(-4px));
+    bottom: rem(strip-unit(12px));
     left: 0;
     width: 100%;
     height: rem(strip-unit(2px));

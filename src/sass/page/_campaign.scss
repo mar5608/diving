@@ -25,7 +25,8 @@
   margin-top: rem(strip-unit(8px));
   padding-inline: rem(strip-unit($padding-sp));
   @include mq(md) {
-    width: rem(strip-unit(1280px));
+    width: rem(strip-unit(1280px));//横スクロールが発生
+    // width: 100%;
     margin-left: auto;
     padding-left: rem(strip-unit(20px));
     margin-top: rem(strip-unit(86px));
