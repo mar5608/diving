@@ -26,8 +26,8 @@
     // left: rem(strip-unit(32px));
 
     left: calc(
-      50% + clamp(9.375rem, -6.339rem + 32.74vw, 23.125rem)
-    ); //150px->370px | 768px ->1440 px
+      50% + clamp(6.25rem, -13.036rem + 40.18vw, 23.125rem)
+    ); //100px->370px | 768px ->1440 px
 
     width: rem(strip-unit(301px));
     height: rem(strip-unit(138px));

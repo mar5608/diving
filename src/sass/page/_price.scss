@@ -43,12 +43,14 @@
 .price__container {
   display: flex;
   flex-direction: column-reverse;
-  align-items: center;
+  align-items: start;
   gap: rem(strip-unit(40px));
 
   @include mq("md") {
     flex-direction: row;
-    gap: rem(strip-unit(93px));
+    // gap: rem(strip-unit(93px));
+    gap: clamp(2.25rem, -4.083rem + 13.19vw, 5.813rem);
+    // 36px->93px | 768px->1440px
   }
 }
 
@@ -57,6 +59,7 @@
   @include mq("md") {
     // width: 50%;
     align-self: flex-start; // 必要に応じて配置を調整
+    padding-left: rem(strip-unit(8px));
   }
 }
 
@@ -80,8 +83,9 @@
   justify-content: space-between;
   padding-top: 0.5rem;
   @include mq(md) {
-    width: rem(strip-unit(492px));
-    display: flex; // 必要に応じて調整
+    // width: rem(strip-unit(492px));
+    // width: clamp(8.125rem, 6.792rem + 2.78vw, 8.875rem);
+    // display: flex; // 必要に応じて調整
     align-items: center; // 中央揃え（必要に応じて）
     // letter-spacing: 0.128em;
   }
@@ -116,6 +120,7 @@
     height: 100%;
     object-fit: cover;
     display: block; // 画像下の余白（inline要素の隙間）対策
+    aspect-ratio: 345 / 227;
   }
   @include mq(md) {
     width: rem(strip-unit(492px));
@@ -127,7 +132,11 @@
     // aspect-ratio: 746 / 492;
 
     display: flex; // 必要に応じて調整
-    align-items: center; // 中央揃え（必要に応じて）
+    align-items: start; // 中央揃え（必要に応じて）
+
+    img {
+      aspect-ratio: 492 / 746;
+    }
   }
 }
 

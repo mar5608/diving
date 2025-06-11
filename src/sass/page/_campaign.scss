@@ -18,17 +18,21 @@
 .campaign__content {
   @include mq(md) {
     position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding-left: calc(50vw - 50%); // 追加
   }
 }
 
 .campaign__wrapper {
   margin-top: rem(strip-unit(8px));
-  padding-inline: rem(strip-unit($padding-sp));
+  // padding-left: rem(strip-unit($padding-sp));
+  padding-right: rem(strip-unit($padding-sp));
   @include mq(md) {
-    width: rem(strip-unit(1280px));//横スクロールが発生
+    // width: rem(strip-unit(1280px));//横スクロールが発生
     // width: 100%;
     margin-left: auto;
-    padding-left: rem(strip-unit(20px));
+    // padding-left: rem(strip-unit(20px));
     margin-top: rem(strip-unit(86px));
     // padding-top: rem(strip-unit(40px));
   }
