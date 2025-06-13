@@ -6,9 +6,12 @@
   padding-top: rem(strip-unit(80px));
   padding-bottom: rem(strip-unit(3px));
   @include mq(md) {
+    // width: 100%;
+    // // height: 300px; // 任意の高さ
     padding-top: rem(strip-unit(100px));
-    background: url("../images/blog/bg-blog_01.webp") top center/contain
-      no-repeat;
+    // background: url("../images/blog/bg-blog_01.webp") top center/contain
+    //   no-repeat;
+    // overflow: hidden;
   }
 }
 
@@ -21,6 +24,18 @@
     left: rem(strip-unit(32px));
     width: rem(strip-unit(437px));
     height: rem(strip-unit(437px));
+  }
+}
+
+.blog__background {
+  display: none;
+  @include mq("md") {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    z-index: -1; // 背景を最背面に配置
+    top: 0;
+    left: 0;
   }
 }
 
