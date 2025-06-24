@@ -56,9 +56,15 @@
   align-items: center;
   gap: rem(strip-unit(40px));
   @include mq("md") {
-    flex-direction: row;
+    // flex-direction: row;
+    // flex-wrap: wrap; // ★ ここが重要！折り返しを有効にする
+    // justify-content: center; // 中央揃え（optional）
     // gap: rem(strip-unit(80px));
     align-items: stretch; // ← MDでも高さ揃えるため
+    // flex-direction: row; //4カラム以上に対応するためコメントアウト
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+    gap: rem(strip-unit(40px));
   }
 }
 
@@ -79,7 +85,9 @@
     gap: rem(strip-unit(40px));
     // 高さ揃えのために全体で伸びる
     // height: 100%;
-    flex: 1; // ★ カードの高さを均等に伸ばす
+    // flex: 1; // ★ カードの高さを均等に伸ばす
+    // width: calc((100% - #{rem(strip-unit(40px))}) / 2); // ★ 2枚並ぶ幅
+    // max-width: rem(strip-unit(520px));
   }
 }
 .voice__container {
