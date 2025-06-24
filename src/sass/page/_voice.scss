@@ -58,6 +58,7 @@
   @include mq("md") {
     flex-direction: row;
     // gap: rem(strip-unit(80px));
+    align-items: stretch; // ← MDでも高さ揃えるため
   }
 }
 
@@ -76,6 +77,9 @@
     padding-top: rem(strip-unit(26px));
     padding-inline: rem(strip-unit(24px));
     gap: rem(strip-unit(40px));
+    // 高さ揃えのために全体で伸びる
+    // height: 100%;
+    flex: 1; // ★ カードの高さを均等に伸ばす
   }
 }
 .voice__container {
@@ -84,6 +88,8 @@
   gap: rem(strip-unit(9px));
   @include mq("md") {
     gap: rem(strip-unit(15px));
+    // 残りのスペースを使う
+    flex-grow: 0;
   }
 }
 
@@ -183,6 +189,9 @@
 }
 
 .voice__text {
+  @include mq(md) {
+    // margin-top: auto; // ← カード下部に常に配置
+  }
 }
 
 .voice__button {
