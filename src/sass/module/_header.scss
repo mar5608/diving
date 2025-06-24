@@ -205,6 +205,7 @@
   transform: translateX(100%); //コンテンツ分が100%移動
   transition: transform 0.3s linear, top 0.3s linear; //linear:一定速度
 
+  overflow-y: auto; // ←縦スクロールを許可
   @include mq(md) {
     display: none;
   }
@@ -219,6 +220,12 @@
   flex-direction: row;
   gap: rem(strip-unit(20px));
   // margin-top: rem(strip-unit(20px));
+
+  // もしこちらの高さが足りない場合はこちらでも調整
+  max-height: calc(
+    100vh - #{$height-sp}
+  ); // ヘッダーの高さを引いた分の高さに制限
+  overflow-y: auto; // スクロールできるように
 }
 
 .drawer-content__body {

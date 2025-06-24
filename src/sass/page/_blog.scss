@@ -51,7 +51,10 @@
   flex-direction: column;
   gap: rem(strip-unit(40px));
   @include mq("md") {
-    flex-direction: row;
+    // flex-direction: row; //4カラム以上に対応するためコメントアウト
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: rem(strip-unit(40px));
   }
   a {
     &:hover {
