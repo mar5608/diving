@@ -51,6 +51,7 @@
     // gap: rem(strip-unit(93px));
     gap: clamp(2.25rem, -4.083rem + 13.19vw, 5.813rem);
     // 36px->93px | 768px->1440px
+    align-items: flex-start; // 画像の高さに合わせて伸ばす
   }
 }
 
@@ -103,40 +104,34 @@
   text-align: right;
   font-size: rem(strip-unit(14px));
   line-height: 1.71429; /* 24px 171.429% */
+  padding: rem(strip-unit(8px));
   @include mq(md) {
     letter-spacing: 0.03em;
   }
 }
 
 .price__img {
-  //   width: rem(strip-unit(345px));
-  //   height: rem(strip-unit(227px));
   width: 100%;
   height: auto;
+  // max-width: rem(strip-unit(492px)); // レスポンシブ対応
   flex-shrink: 0;
   aspect-ratio: 345 / 227;
+
   img {
     width: 100%;
-    height: 100%;
+    // height: 100%;
     object-fit: cover;
     display: block; // 画像下の余白（inline要素の隙間）対策
-    aspect-ratio: 345 / 227;
+    // aspect-ratio: 345 / 227;
   }
+
   @include mq(md) {
     width: rem(strip-unit(492px));
-    // // height: rem(strip-unit(492px));
-    // // width: 50%;
 
-    // height: 100%; // 親の高さいっぱいに広げる
-    // flex-shrink: 0;
-    // aspect-ratio: 746 / 492;
+    aspect-ratio: 492 / 746; // レスポンシブ対応
 
     display: flex; // 必要に応じて調整
     align-items: start; // 中央揃え（必要に応じて）
-
-    img {
-      aspect-ratio: 492 / 746;
-    }
   }
 }
 
