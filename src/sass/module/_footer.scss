@@ -52,6 +52,9 @@
   display: flex;
   flex-direction: row;
   gap: rem(strip-unit(16px));
+  @include mq(md) {
+    padding-bottom: rem(strip-unit(4px));
+  }
 }
 
 .footer__sns-item {
@@ -96,7 +99,7 @@
 
   @include mq("md") {
     // grid-template-columns: repeat(4, 1fr);
-    margin-top: rem(strip-unit(22px));
+    margin-top: rem(strip-unit(25px));
     // max-width: rem(strip-unit(1024px));
     // gap: rem(strip-unit(4px));
   }
@@ -190,7 +193,7 @@
       .footer__heading {
         &:not(:first-child) {
           //私たちについて
-          margin-top: rem(strip-unit(12px));
+          margin-top: rem(strip-unit(16px));
         }
       }
     }
@@ -213,9 +216,14 @@
     }
 
     &:nth-child(3) {
-      // border: 1px solid blue;
       order: 3;
       padding-left: rem(strip-unit(16px));
+      .footer__heading {
+        &:nth-child(2) {
+          //料金一覧
+          margin-top: rem(strip-unit(16px));
+        }
+      }
     }
 
     &:nth-child(4) {
@@ -223,8 +231,24 @@
       padding-left: rem(strip-unit(15px));
       .footer__heading {
         &:nth-child(1) {
-          //ダイビング情報
+          //よくある質問
+          // border: 1px solid blue;
           margin-top: rem(strip-unit(0px));
+        }
+        &:nth-child(2) {
+          //プライバシーポリシー
+          // border: 1px solid blue;
+          margin-top: rem(strip-unit(16px));
+        }
+        &:nth-child(3) {
+          //お問合わせ
+          // border: 1px solid blue;
+          margin-top: rem(strip-unit(16px));
+        }
+        &:nth-child(4) {
+          //お問合わせ
+          // border: 1px solid blue;
+          margin-top: rem(strip-unit(16px));
         }
       }
     }
@@ -236,10 +260,11 @@
 }
 
 .footer__heading {
-  padding-left: rem(strip-unit(20px)); //26px
+  padding-left: rem(strip-unit(22px)); //26px
   font-weight: $bold;
   line-height: 1.125; /* 18px 112.5% */
-  letter-spacing: -0.15em;
+  letter-spacing: -0.1em;
+  letter-spacing: 0em;
 
   position: relative;
 

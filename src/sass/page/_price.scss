@@ -60,7 +60,7 @@
   @include mq("md") {
     // width: 50%;
     align-self: flex-start; // 必要に応じて配置を調整
-    padding-left: rem(strip-unit(8px));
+    padding-left: rem(strip-unit(2px));
   }
 }
 
@@ -82,7 +82,7 @@
 .price-table__item {
   display: flex;
   justify-content: space-between;
-  padding-top: 0.5rem;
+  padding-top: rem(strip-unit(8px));
   @include mq(md) {
     // width: rem(strip-unit(492px));
     // width: clamp(8.125rem, 6.792rem + 2.78vw, 8.875rem);
@@ -104,9 +104,11 @@
   text-align: right;
   font-size: rem(strip-unit(14px));
   line-height: 1.71429; /* 24px 171.429% */
-  padding: rem(strip-unit(8px));
+  // padding-top: rem(strip-unit(8px));
   @include mq(md) {
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
+    padding-right: 2px;
+    // padding-top: 0;
   }
 }
 
