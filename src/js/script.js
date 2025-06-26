@@ -10,32 +10,45 @@
 document.addEventListener("DOMContentLoaded", () => {
   //要素の取得
   const loading = document.querySelector(".loading");
-  // const loadingbg = document.querySelector(".loadingbg");
   const contentsElement = document.querySelector(".main .hidden");
   // セッションストレージからフラグを取得
   const isFirstLoad = !sessionStorage.getItem("isFirstLoad");
+
   if (isFirstLoad) {
     console.log("初回アクセスです");
     // ローディング画面を表示
     loading.style.display = "block";
-    // loading.classList.add("active");
     setTimeout(() => {
       loading.classList.add("active");
-    }, 10);
+      // クラスをここで追加
+      // document
+      //   .querySelector(".loading__image-part--left")
+      //   .classList.add("image-part--left");
+      document
+        .querySelector(".loading__image-part--left")
+        .classList.add("animation-top-left");
+      // document
+      //   .querySelector(".loading__image-part--right")
+      //   .classList.add("image-part--right");
+      document
+        .querySelector(".loading__image-part--right")
+        .classList.add("animation-top-right");
+    }, 100); //10->100に変更
 
-    // 2秒後にローディング画面の `active` クラスを削除（フェードアウト開始）
+    // 3秒後にローディング画面の `active` クラスを削除（フェードアウト開始）
     setTimeout(() => {
       loading.classList.remove("active");
 
       // さらに 0.5秒後にローディング画面を完全に非表示
-      setTimeout(() => {
+      requestAnimationFrame(() => {
+        // setTimeout(() => {
         loading.style.display = "none";
         // `.wrapper.hidden` の `hidden` クラスを削除し、コンテンツを表示
         if (contentsElement) {
           contentsElement.classList.remove("hidden");
         }
       }, 500);
-    }, 2000);
+    }, 3000);
 
     // sessionStorage に初回訪問の記録を保存
     sessionStorage.setItem("isFirstLoad", "true");
@@ -58,10 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //ページが読み込まれたらすぐに動かしたい場合の記述;
 $(window).on("load", function () {
-  $(".loading").delay(1200).fadeOut("slow"); //ロゴを1.2秒でフェードアウトする記述
+  // $(".loading").delay(1200).fadeOut("slow"); //ロゴを1.2秒でフェードアウトする記述
+  $(".loading__head").delay(1200).fadeOut("slow"); //ロゴを1.2秒でフェードアウトする記述
 
   //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
   $(".loading")
+    // .delay(1500)
     .delay(1500)
     .fadeOut("slow", function () {
       $("body").addClass("appear"); //フェードアウト後bodyにappearクラス付与
