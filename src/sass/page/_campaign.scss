@@ -51,9 +51,25 @@
 }
 .campaign__list {
   width: rem(strip-unit(280px));
+  height: 100%; /* ← 高さをそろえる */
+  align-items: stretch;
+}
+
+.splide__list {
+  display: flex;
+  align-items: stretch; // ← これが親の伸ばし役
+}
+
+.splide__slide {
+  display: flex;
+  flex-direction: column;
 }
 
 .campaign__slide {
+  display: flex; /* ← カード全体を縦並びのFlexに */
+  flex-direction: column; /* ← 縦並び */
+  height: 100%; /* ← 高さをそろえる */
+  flex: 1; // ← 親で stretch される
   background: $white;
   // box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
   box-shadow: rem(strip-unit(2px)) rem(strip-unit(2px)) rem(strip-unit(10px))
@@ -61,7 +77,6 @@
   margin-top: rem(strip-unit(20px));
   margin-bottom: rem(strip-unit(10px));
   width: 100%;
-  height: auto;
 
   @include mq(md) {
     // margin-top: rem(strip-unit(40px));
@@ -120,6 +135,9 @@
 }
 
 .slide__content {
+  display: flex; /* ← slide__content 内も縦並び */
+  flex-direction: column;
+  flex: 1; /* ← 残りの高さを占める */
   padding-top: rem(strip-unit(16px));
   padding-bottom: rem(strip-unit(24px));
   padding-inline: rem(strip-unit(16px));
@@ -163,8 +181,11 @@
   justify-content: center;
   align-items: center;
   border-top: 1px solid $d-green;
-  margin-top: rem(strip-unit(10px));
+  // margin-top: rem(strip-unit(10px));
   padding-top: rem(strip-unit(8px));
+
+  /* ← これを下寄せにするために、上に auto margin を付ける */
+  margin-top: auto; /* ← これがポイント！ */
 
   @include mq(md) {
     margin-top: rem(strip-unit(8px));

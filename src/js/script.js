@@ -207,6 +207,63 @@ let splideOptionCampaign = {
 };
 new Splide("#js-campaign-splide", splideOptionCampaign).mount();
 
+// ココに高さを揃える処理を入れる！
+// Splideを初期化
+const splideCampaign = new Splide("#js-campaign-splide", splideOptionCampaign);
+splideCampaign.mount();
+
+// Splideのmountedイベントで内部構造生成を待つ
+splideCampaign.on("mounted", function () {
+  console.log("Splide mounted OK");
+
+  // 全画像の読み込みが終わってから高さ揃え
+  const images = document.querySelectorAll("#js-campaign-splide img");
+  let loadedCount = 0;
+
+  images.forEach((img) => {
+    if (img.complete) {
+      loadedCount++;
+    } else {
+      img.addEventListener("load", () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          setEqualHeight();
+        }
+      });
+    }
+  });
+
+  if (loadedCount === images.length) {
+    // すでに全部読み込み済み
+    setEqualHeight();
+  }
+
+  function setEqualHeight() {
+    console.log("画像ロード完了 → 高さ揃え開始");
+    const slides = document.querySelectorAll(".campaign__slide");
+    let maxHeight = 0;
+
+    slides.forEach((slide) => {
+      const content = slide.querySelector(".slide__content");
+      const img = slide.querySelector(".slide__img-wrapper");
+
+      // `img-wrapper` の高さを正確に取るために中の <img> の高さを取得
+      const imgHeight = img.querySelector("img").offsetHeight;
+
+      const totalHeight = imgHeight + content.offsetHeight;
+      if (totalHeight > maxHeight) {
+        maxHeight = totalHeight;
+      }
+    });
+
+    slides.forEach((slide) => {
+      slide.style.height = `${maxHeight}px`;
+    });
+
+    console.log("最大高さ:", maxHeight);
+  }
+});
+
 /************************
  * 画像の出現アニメーション
  ************************/
