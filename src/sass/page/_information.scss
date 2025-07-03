@@ -6,6 +6,7 @@
   padding-top: rem(strip-unit(80px));
   padding-bottom: rem(strip-unit(82px));
   @include mq("md") {
+    margin-top: rem(strip-unit(138px));
     padding-top: rem(strip-unit(99px));
     padding-bottom: rem(strip-unit(99px));
   }
