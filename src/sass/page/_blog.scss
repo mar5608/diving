@@ -53,7 +53,8 @@
   @include mq("md") {
     // flex-direction: row; //4カラム以上に対応するためコメントアウト
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 3fr);
     gap: rem(strip-unit(40px));
   }
   a {
@@ -74,7 +75,7 @@
   padding-bottom: rem(strip-unit(24px));
   padding-inline: rem(strip-unit(16px));
   //   margin-top: rem(strip-unit(24px));
-  width: rem(strip-unit(333px));
+  // width: rem(strip-unit(333px));
 }
 
 .blog__card-img {
