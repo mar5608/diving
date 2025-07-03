@@ -3,10 +3,10 @@
 .voice {
   position: relative;
   padding-top: rem(strip-unit(80px));
-  padding-bottom: rem(strip-unit(84px));
+  // padding-bottom: rem(strip-unit(84px));
   @include mq("md") {
     padding-top: rem(strip-unit(138px));
-    padding-bottom: rem(strip-unit(102px));
+    // padding-bottom: rem(strip-unit(102px));
   }
 }
 
