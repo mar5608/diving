@@ -17,7 +17,7 @@
 
 .campaign__content {
   @include mq(md) {
-    position: relative;
+    // position: relative;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     padding-left: calc(50vw - 50%); // 追加
