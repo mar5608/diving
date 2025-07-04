@@ -115,12 +115,78 @@ $("#js-pagetop").click(function () {
 /************************
  * drawer
  ************************/
+// グローバルで scrollPosition を宣言
+let scrollPosition = 0;
 // drawerのアイコンをクリックしたときの処理
 jQuery("#js-drawer-icon").on("click", function (e) {
   e.preventDefault();
   console.log("drawerのアイコンをクリックしたときの処理");
+
+  // ウィンドウの高さを取得
+  const windowHeight = window.innerHeight;
+  const minHeight = 600; // ここで条件の高さを設定
+
+  const drawerIcon = jQuery("#js-drawer-icon");
+  const drawerContent = jQuery("#js-drawer-content");
+
   jQuery("#js-drawer-icon").toggleClass("is-checked");
   jQuery("#js-drawer-content").toggleClass("is-checked");
+
+  // Drawer の開閉状態を判定
+  const isOpen = drawerContent.hasClass("is-checked");
+
+  // スクロールバー切り替え
+  if (windowHeight >= minHeight) {
+    // 高さが minHeight 以上 → スクロールバーを非表示にする
+    drawerContent.css("overflow-y", "hidden");
+    drawerContent.find(".drawer-content__body").css("overflow-y", "hidden");
+    console.log("スクロールバーを非表示 & 内側もスクロール禁止");
+    // drawerContent.css("overflow-y", "hidden");
+    // console.log("スクロールバーを非表示");
+  } else {
+    // 高さが minHeight 未満 → スクロールバーを表示する
+    drawerContent.css("overflow-y", "auto");
+    drawerContent.find(".drawer-content__body").css("overflow-y", "auto");
+    console.log("スクロールバーを表示 & 内側もスクロール可");
+    // drawerContent.css("overflow-y", "auto");
+    // console.log("スクロールバーを表示");
+  }
+
+  // === スクロールロック処理 ===
+  if (isOpen) {
+    console.log("Drawer を開いたので body を固定");
+
+    scrollPosition = window.pageYOffset; // 現在位置を保存
+
+    jQuery("body").css({
+      position: "fixed",
+      top: `-${scrollPosition}px`,
+      width: "100%",
+      overflow: "hidden",
+    });
+  } else {
+    console.log("Drawer を閉じたので body を解除");
+
+    jQuery("body").css({
+      position: "",
+      top: "",
+      width: "",
+      overflow: "",
+    });
+
+    // 保存しておいた位置に戻す
+    window.scrollTo(0, scrollPosition);
+  }
+  // 背景スクロールを制御する
+  // if (drawerContent.hasClass("is-checked")) {
+  //   // Drawer が開いたら body に overflow: hidden
+  //   jQuery("body").css("overflow", "hidden");
+  //   console.log("bodyのoverflowをhiddenに設定");
+  // } else {
+  //   // Drawer が閉じたら body の overflow を戻す
+  //   jQuery("body").css("overflow", "");
+  //   console.log("bodyのoverflowを戻す");
+  // }
 });
 
 // ドロワーの中のリンクをクリックしたときの処理
@@ -129,13 +195,29 @@ jQuery('#js-drawer-content a[href^="#"]').on("click", function (e) {
   console.log("is-checkedを外す処理");
   jQuery("#js-drawer-icon").removeClass("is-checked");
   jQuery("#js-drawer-content").removeClass("is-checked");
-});
 
-jQuery('a[href^="#"]').on("click", function (e) {
+  // === body 固定解除 ===
+  jQuery("body").css({
+    position: "",
+    top: "",
+    width: "",
+    overflow: "",
+  });
+  console.log("Drawerのリンクをクリックしたので body を解除");
+  // window.scrollTo(0, scrollPosition);
+
+  // ==== アンカーリンクで移動する ====
   const speed = 300;
   const id = jQuery(this).attr("href");
   const target = jQuery("#" == id ? "html" : id);
-  const position = jQuery(target).offset().top;
+  console.log("target:", target);
+  if (!target.length) {
+    console.warn("ターゲットが見つかりません！");
+    return;
+  }
+  const position = target.offset().top;
+  console.log("position:", position);
+
   jQuery("html,body").animate(
     {
       scrollTop: position,
@@ -143,14 +225,26 @@ jQuery('a[href^="#"]').on("click", function (e) {
     speed,
     "swing" // swing or liner
   );
-  // jQuery("html,body").animate(
-  //   {
-  //     scrollTop: 0,
-  //   },
-  //   1000,
-  //   "swing" // swing or liner
-  // );
+  console.log("アンカーリンクで移動する body を解除1");
 });
+
+// 共通のページ内リンク（ドロワー内リンクを除外）
+jQuery('a[href^="#"]')
+  .not('#js-drawer-content a[href^="#"]')
+  .on("click", function (e) {
+    const speed = 300;
+    const id = jQuery(this).attr("href");
+    const target = jQuery("#" == id ? "html" : id);
+    const position = target.offset().top;
+    console.log("アンカーリンクで移動する body を解除2");
+    jQuery("html,body").animate(
+      {
+        scrollTop: position,
+      },
+      speed,
+      "swing" // swing or liner
+    );
+  });
 
 /************************
  * fv Splide(スライダー)
